@@ -11,12 +11,37 @@ var main = function () {
         }
 
         var lossPercent = findLossPercent(preWeightValue, postWeightValue);
-        $('.answer').replaceWith('<p class="answer">' + lossPercent + '%</p>');
+        $('.answerLoss').replaceWith('<p class="answerLoss">' + lossPercent + '%</p>');
         
         
         return false;
     });
     
+    
+    //Dev Calculator
+    $('#devCalForm').submit(function() {
+    
+        var totalMin = $('#totalMin').val();
+        var totalSec = $('#totalSec').val();
+        var devMin = $('#devMin').val();
+        var devSec = $('#devSec').val();
+
+        function findSeconds (min, sec) {
+            return (min * 60) + sec;
+        }
+
+        var totalTime = findSeconds(totalMin, totalSec);
+        var totalDev = findSeconds(devMin, devSec);
+
+        function findPercent (total, dev){
+            return Math.round((100 - ((dev / total) * 100)) * 100) / 100;
+        }
+        var devPercent = findPercent(totalTime, totalDev);
+        $('.answerDev').replaceWith('<p class="answerDev">' + devPercent + '%</p>');
+        
+        return false;
+    });
+                
     
     
 }

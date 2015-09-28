@@ -5,12 +5,13 @@ html body {
 }
 
 .container {
-    margin: 0 auto 0 auto;
+    margin: 5px auto 50px auto;
     text-align: center;
 }
 
 h2 {
-    margin: 50px auto 50px auto;
+    margin: 0 auto;
+    padding: 5px 0 5px 0;
     text-align: center;
     font-size:4em;
     border-top:2px solid black;
@@ -85,9 +86,16 @@ fieldset {
     text-align: center;
     height: 275px;
     padding: 20px 0px 10px 0px;
-    margin: 0; 
+    margin: 0 auto; 
 }
 
+#colontime {
+
+}
+
+#timeform {
+    margin: 0 auto;
+}
 
 
 
