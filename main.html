@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" defer></script>
+        <script src="form.js" type="text/javascript" defer></script>
+        
+    </head>
+    
+    <body>
+        
+        <!--Dev Calculator-->
+        <h2>Moisture Loss Calculator</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 cal" id="lossCal">
+                    <form class="form-control calform" id="lossCalForm">
+                        Pre-weight:
+                        <br>
+                        <input class="formtext" id="preWeight" type="number" name="preWeight" placeholder="grams">
+                        <br>
+                        Post-weight
+                        <br>
+                        <input class="formtext" id= "postWeight" type="number" name="postWeight" placeholder="grams">
+                        <br>
+                        <input type="submit" name="submitCal" value="calculate">
+                    </form>
+                </div>
+
+                <div class="col-md-6 answerbox">
+                    <p class="answer"></p>
+                </div>
+            </div>
+        </div>
+        
+        
+        <!--Dev Calculator-->
+        <h2>Roast Development Calculator</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 cal" id="devCal">
+                    <form class="form-control calform" id="devCalForm">
+                        Pre-weight:
+                        <br>
+                        <input class="formtext" id="preWeight" type="number" name="preWeight" placeholder="grams">
+                        <br>
+                        Post-weight
+                        <br>
+                        <input class="formtext" id= "postWeight" type="number" name="postWeight" placeholder="grams">
+                        <br>
+                        <input type="submit" name="submitCal" value="calculate">
+                    </form>
+                </div>
+
+                <div class="col-md-6 answerbox">
+                    <p class="answer"></p>
+                </div>
+            </div>
+        </div>
+       
+        
+        
+    </body>
+            
+            
+
+</html>
