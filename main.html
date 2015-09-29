@@ -11,24 +11,73 @@
     
     <body>
         
+        <!--Ratio Calculator-->
+        <h2>Brew Ratio Calculator</h2>
+        <div class="container">
+            <div class="row">
+                
+                <!--cal side-->
+                <div class="col-md-6 cal" id="brewCal">
+                    <form class="form-control calform" id="brewCalForm">
+                        <label class="col-xs-12 control-label" for="formGroupInputLarge">Coffee Amount</label>
+                        <br>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-sm-offset-3 inner-brew-form">
+                        <input class="form-control" id="coffeeDose" type="number" name="coffeeDose" placeholder="grams">
+                            </div>
+                        </div>
+                        <br>
+                        <label class="col-xs-12 control-label" for="formGroupInputLarge">Water Amount</label>
+                        <br>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-sm-offset-3 inner-brew-form">
+                                <input class="form-control inner-loss-form" id="waterDose" type="number" name="waterDose" placeholder="grams">
+                            </div>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-default" name="submitCal" >Calculate</button>
+                        <!--<input type="submit" name="submitCal" value="calculate">-->
+                    </form>
+                </div>
+                
+                <!--answer side-->
+                <div class="col-md-6 answerbox">
+                    <p class="answerBrew"></p>
+                </div>
+            </div>
+        </div>
+        
+        
         <!--Loss Calculator-->
         <h2>Moisture Loss Calculator</h2>
         <div class="container">
             <div class="row">
+                
+                <!--cal side-->
                 <div class="col-md-6 cal" id="lossCal">
                     <form class="form-control calform" id="lossCalForm">
-                        Pre-weight:
+                        <label class="col-xs-12 control-label" for="formGroupInputLarge">Pre-Weight</label>
                         <br>
-                        <input class="formtext" id="preWeight" type="number" name="preWeight" placeholder="grams">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-sm-offset-3 inner-loss-form">
+                        <input class="form-control" id="preWeight" type="number" name="preWeight" placeholder="grams">
+                            </div>
+                        </div>
                         <br>
-                        Post-weight
+                        <label class="col-xs-12 control-label" for="formGroupInputLarge">Post-Weight</label>
                         <br>
-                        <input class="formtext" id= "postWeight" type="number" name="postWeight" placeholder="grams">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-sm-offset-3 inner-loss-form">
+                                <input class="form-control inner-loss-form" id= "postWeight" type="number" name="postWeight" placeholder="grams">
+                            </div>
+                        </div>
                         <br>
-                        <input type="submit" name="submitCal" value="calculate">
+                        <button type="submit" class="btn btn-default" name="submitCal" >Calculate</button>
+                        <!--<input type="submit" name="submitCal" value="calculate">-->
                     </form>
                 </div>
-
+                
+                <!--answer side-->
                 <div class="col-md-6 answerbox">
                     <p class="answerLoss"></p>
                 </div>
@@ -45,41 +94,47 @@
                 <div class="col-md-6 cal" id="devCal">
                     <form class="form-control calform" id="devCalForm">
                         <div class="row">
-                            <!--divtime-->
-                            <div class="col-sm-6" id="divTime">
+                            
+                            <!--devtime-->
+                            <div class="col-sm-12" id="devTime">
                                 <div class="row">
                                     <label class="col-xs-12 control-label" for="formGroupInputLarge">First Crack Start</label>
                                 </div>
-                                <div class="row">
-                                    <div class="col-xs-4" id="timeform">
-                                        <input type="number" class="form-control formtext" placeholder="min" name="devMin" id="devMin">
+                                <div class="row" id="timeform">
+                                    <div class="col-xs-5">
+                                        <input type="number" class="form-control" placeholder="min" name="devMin" id="devMin">
                                     </div>
-                                    
-                                    <div class="col-xs-4" id="timeform">
-                                        <input type="number" class="form-control formtext" placeholder="sec" name="devSec" id="devSec">
+                                    <div class="col-xs-1">
+                                        <p>:</p>
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <input type="number" class="form-control" placeholder="sec" name="devSec" id="devSec">
                                     </div>    
                                 </div>
                             </div>
+                            
                             <!--totaltime-->
-                            <div class="col-sm-6" id="totalTime">
+                            <div class="col-sm-12" id="totalTime">
                                 <div class="row">
                                     <label class="col-xs-12 control-label" for="formGroupInputLarge">Total Roast Time</label>
                                 </div>
-                                <div class="row">
-                                    <div class="col-xs-4" id="timeform">
-                                        <input type="number" class="form-control formtext" placeholder="min" name="totalMin" id="totalMin">
+                                <div class="row" id="timeform">
+                                    <div class="col-xs-5">
+                                        <input type="number" class="form-control" placeholder="min" name="totalMin" id="totalMin">
                                     </div>
-                                    
-                                    <div class="col-xs-4" id="timeform">
-                                        <input type="number" class="form-control formtext" placeholder="sec" name="totalMin" id="totalSec">
+                                    <div class="col-xs-1">
+                                        <p>:</p>
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <input type="number" class="form-control" placeholder="sec" name="totalSec" id="totalSec">
                                     </div>    
                                 </div>
                                 
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-xs-12">
-                                <input type="submit" name="submitCal" value="calculate">
+                            <div class="col-xs-12 inner-dev-form">
+                                <button type="submit" class="btn btn-default" name="submitCal" >Calculate</button>
                             </div>
                         </div>
                     </form>
@@ -91,6 +146,8 @@
                 </div>
             </div>
         </div>
+        
+        
        
         
         

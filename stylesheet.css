@@ -30,12 +30,6 @@ h2 {
     border:0px solid transparent;
 }
 
-
-.formtext {
-    margin: 0px 0 20px 0;
-    font-size: 1.1em;
-}
-
 .answerbox {
     margin: 0 auto 0 auto;
     padding-top: 95px;
@@ -54,12 +48,34 @@ h2 {
 fieldset {
     border:0px;
 }
+/*Brew Calculator*/
+
+#brewCal {
+    background-color: darkturquoise;
+}
+
+#brewCalForm {
+    background-color: darkturquoise;
+    font-size:1.5em;
+    border: 0px;
+    text-align: center;
+    height: 275px;
+    padding: 20px 0px 10px 0px;
+    margin: 0; 
+}
+
+.inner-brew-form {
+    margin: 0 auto 0 auto;
+    font-size: 1.1em;
+    
+    
+}
 
 
 /*Loss Calculator*/
 
 #lossCal {
-    background-color:deepskyblue;
+    background-color: deepskyblue;
 }
 
 #lossCalForm {
@@ -70,6 +86,13 @@ fieldset {
     height: 275px;
     padding: 20px 0px 10px 0px;
     margin: 0; 
+}
+
+.inner-loss-form {
+    margin: 0 auto 0 auto;
+    font-size: 1.1em;
+    
+    
 }
 
 
@@ -86,22 +109,21 @@ fieldset {
     text-align: center;
     height: 275px;
     padding: 20px 0px 10px 0px;
-    margin: 0 auto; 
+    margin: 0; 
 }
 
 #colontime {
-
+    padding: 0;
+    margin: 0;
 }
 
 #timeform {
-    margin: 0 auto;
+    margin: 0 auto 20px auto;
+    padding: 0 0 0 30px;
+    /*background-color:blue;*/
 }
 
-
-
-/*test*/
-
-/*#bloop {
-    border: 2px solid black;
-    height: 300px;
-}*/
+.inner-dev-form {
+    margin: 0px 0 0px 0;
+    font-size: 1.1em;
+}
