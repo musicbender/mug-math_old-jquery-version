@@ -19,38 +19,24 @@
                 <!--cal side-->
                 <div class="col-md-6 cal" id="brewCal">
                     <form class="form-control calform" id="brewCalForm">
-                        <!--Coffee Amount-->
                         <label class="col-xs-12 control-label" for="formGroupInputLarge">Coffee Amount</label>
                         <br>
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 col-sm-offset-3 inner-brew-form">
-                                <div class="input-group">
-                                    <!--dropdown-->
-                                    <div class="input-group-btn">
-                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">grams <span class="caret"></span></button>
-                                        <ul class="dropdown-menu brew-dropdown">
-                                          <li><a href="#">grams</a></li>
-                                          <li><a href="#">ounces</a></li>
-                                          <li><a href="#">tablespoons</a></li>
-                                        </ul>
- 
-                                    </div>
-                                    <input class="form-control" id="coffeeDose" type="number" name="coffeeDose" min="1" max="1000" placeholder="">
-                                </div>
+                        <input class="form-control" id="coffeeDose" type="number" name="coffeeDose" placeholder="grams">
                             </div>
                         </div>
                         <br>
-                        <!--Water Amount-->
                         <label class="col-xs-12 control-label" for="formGroupInputLarge">Water Amount</label>
                         <br>
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 col-sm-offset-3 inner-brew-form">
-                                <input class="form-control inner-loss-form" id="waterDose" type="number" name="waterDose" min="1" max="9999" placeholder="grams">
+                                <input class="form-control inner-loss-form" id="waterDose" type="number" name="waterDose" placeholder="grams">
                             </div>
                         </div>
                         <br>
                         <button type="submit" class="btn btn-default" name="submitCal" >Calculate</button>
-                        
+                        <!--<input type="submit" name="submitCal" value="calculate">-->
                     </form>
                 </div>
                 
@@ -74,7 +60,7 @@
                         <br>
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 col-sm-offset-3 inner-loss-form">
-                        <input class="form-control" id="preWeight" type="number" name="preWeight" min="1" max="10000" placeholder="grams">
+                        <input class="form-control" id="preWeight" type="number" name="preWeight" placeholder="grams">
                             </div>
                         </div>
                         <br>
@@ -82,7 +68,7 @@
                         <br>
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 col-sm-offset-3 inner-loss-form">
-                                <input class="form-control inner-loss-form" id= "postWeight" type="number" name="postWeight" min="1" max="10000" placeholder="grams">
+                                <input class="form-control inner-loss-form" id= "postWeight" type="number" name="postWeight" placeholder="grams">
                             </div>
                         </div>
                         <br>
@@ -116,13 +102,13 @@
                                 </div>
                                 <div class="row" id="timeform">
                                     <div class="col-xs-5">
-                                        <input type="number" class="form-control" min="0" max="30" placeholder="min" name="devMin" id="devMin">
+                                        <input type="number" class="form-control" placeholder="min" name="devMin" id="devMin">
                                     </div>
                                     <div class="col-xs-1">
                                         <p>:</p>
                                     </div>
                                     <div class="col-xs-5">
-                                        <input type="number" class="form-control" min="0" max="99" placeholder="sec" name="devSec" id="devSec">
+                                        <input type="number" class="form-control" placeholder="sec" name="devSec" id="devSec">
                                     </div>    
                                 </div>
                             </div>
@@ -134,13 +120,13 @@
                                 </div>
                                 <div class="row" id="timeform">
                                     <div class="col-xs-5">
-                                        <input type="number" class="form-control" min="0" max="30" placeholder="min" name="totalMin" id="totalMin">
+                                        <input type="number" class="form-control" placeholder="min" name="totalMin" id="totalMin">
                                     </div>
                                     <div class="col-xs-1">
                                         <p>:</p>
                                     </div>
                                     <div class="col-xs-5">
-                                        <input type="number" class="form-control" min="0" max="99" placeholder="sec" name="totalSec" id="totalSec">
+                                        <input type="number" class="form-control" placeholder="sec" name="totalSec" id="totalSec">
                                     </div>    
                                 </div>
                                 
