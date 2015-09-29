@@ -15,6 +15,13 @@ var main = function () {
         return false;
     });
     
+    //Dropdown Select for Brew Cal
+    
+    $(".brew-dropdown li a").click(function(){
+        var selText = $(this).text();
+        $(this).closest('div').find('button[data-toggle="dropdown"]').html(selText + ' <span class="caret"></span>');
+});
+    
     //Loss Calculator
     
     $('#lossCalForm').submit(function(){
