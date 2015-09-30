@@ -1,3 +1,4 @@
+
 var unitArray = [0, "grams"];
 
 var main = function () {
@@ -8,28 +9,39 @@ var main = function () {
         $(this).parent().parent().siblings(".dropdown-toggle:first-child").html($(this).text()+' <span class="caret"></span>');
         $(this).parent().parent().siblings(".dropdown-toggle:first-child").val($(this).text());
         
+        var currentValue = $(this).parent().parent().parent().siblings().val();
+        var currentUnit = $(this).parent().parent().siblings(".dropdown-toggle:first-child").val(); //$(this).text();
+        
         
         unitArray.shift();
         unitArray.push($(this).text());
-  
+        
+        var prevUnit = unitArray[0];
         
         //Unit Converter
         function unitConvert(value, unit, prev) {
-            if (prev = "grams" || "ml") {
-                switch (unit) {
-                    case "grams":
-                    case "ml":
-                        return value;    
-                    case "ounces": 
-                        return Math.round((parseFloat(value) * 0.035274) * 100) / 100;   
-                    //case "tbsp.": 
-                        //return Math.round((parseFloat(value) * 0.18867925) * 10) / 10; 
-                    default: 
-                        return value;  
+            if (prev == "grams") {
+                if (unit == "grams"){return value}
+                else if (unit == "ounces"){
+                    return Math.round((parseFloat(value) * 0.035274) * 100) / 100;
                 }
+                /*else if (unit == "tbsp."){
+                    return Math.round((parseFloat(value) * 0.18867925) * 10) / 10;
+                }*/
+                else {return value} 
+                
             }
-            else if (prev = "ounces") {
-                switch (unit) {
+            else if (prev == "ounces") {
+                if (unit == "grams") {
+                    return Math.round((parseFloat(value) / 0.035274) * 1) / 1;
+                }
+                else if (unit == "ounces") {return value}
+                /*else if (unit == "tbsp."){
+                    return Math.round((parseFloat(value) * 0.19000570) * 10) / 10;
+                }*/
+                else {return value}
+                
+                /*switch (unit) {
                     case "grams":
                     case "ml":
                         return Math.round((parseFloat(value) / 0.035274) * 100) / 100;    
@@ -39,7 +51,7 @@ var main = function () {
                         //return Math.round((parseFloat(value) * 0.19000570) * 10) / 10; 
                     default: 
                         return value;  
-                }
+                }*/
             }
 
             /*else if (prev == "tbsp.") {
@@ -58,9 +70,7 @@ var main = function () {
             else {return value};
     }
         
-        var currentValue = $(this).parent().parent().parent().siblings().val();
-        var currentUnit = $(this).text();
-        var prevUnit = unitArray[0];
+        
         var convert = unitConvert(currentValue, currentUnit, prevUnit);           
         
         $(this).parent().parent().parent().siblings().val(convert);               
@@ -71,7 +81,7 @@ var main = function () {
     
     $('.test').click(function() {
         
-        var testPoop = $('#TESTID').text();
+        var testPoop = $('#TESTID').parent().parent().siblings(".dropdown-toggle:first-child").text();//.text();
         
         $(this).replaceWith('<p class="test">' + testPoop + ' ' + unitArray[0] + '!!!</p>');
         
