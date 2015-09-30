@@ -1,5 +1,84 @@
+var unitArray = [0, "grams"];
+
 var main = function () {
+        
+        //Dropdown Button Addon and Functions
     
+    $(".dropdown-menu li a").click(function() {
+        $(this).parent().parent().siblings(".dropdown-toggle:first-child").html($(this).text()+' <span class="caret"></span>');
+        $(this).parent().parent().siblings(".dropdown-toggle:first-child").val($(this).text());
+        
+        
+        unitArray.shift();
+        unitArray.push($(this).text());
+  
+        
+        //Unit Converter
+        function unitConvert(value, unit, prev) {
+            if (prev = "grams" || "ml") {
+                switch (unit) {
+                    case "grams":
+                    case "ml":
+                        return value;    
+                    case "ounces": 
+                        return Math.round((parseFloat(value) * 0.035274) * 100) / 100;   
+                    //case "tbsp.": 
+                        //return Math.round((parseFloat(value) * 0.18867925) * 10) / 10; 
+                    default: 
+                        return value;  
+                }
+            }
+            else if (prev = "ounces") {
+                switch (unit) {
+                    case "grams":
+                    case "ml":
+                        return Math.round((parseFloat(value) / 0.035274) * 100) / 100;    
+                    case "ounces": 
+                        return value;   
+                    //case "tbsp.": 
+                        //return Math.round((parseFloat(value) * 0.19000570) * 10) / 10; 
+                    default: 
+                        return value;  
+                }
+            }
+
+            /*else if (prev == "tbsp.") {
+                switch (unit) {
+                    case "grams":
+                    case "ml":
+                           return Math.round((parseFloat(value) / 0.18867925) * 10) / 10;
+                    case "ounces": 
+                        return Math.round((parseFloat(value) * 0.19000570) * 10) / 10;  
+                    case "tbsp.": 
+                        return value; 
+                    default: 
+                        return value;
+                }
+            }*/
+            else {return value};
+    }
+        
+        var currentValue = $(this).parent().parent().parent().siblings().val();
+        var currentUnit = $(this).text();
+        var prevUnit = unitArray[0];
+        var convert = unitConvert(currentValue, currentUnit, prevUnit);           
+        
+        $(this).parent().parent().parent().siblings().val(convert);               
+    });
+    
+    
+    //TEST
+    
+    $('.test').click(function() {
+        
+        var testPoop = $('#TESTID').text();
+        
+        $(this).replaceWith('<p class="test">' + testPoop + ' ' + unitArray[0] + '!!!</p>');
+        
+        return false;
+    }); 
+                
+                
     //Brew Calculator
     
     $('#brewCalForm').submit(function() {
@@ -14,6 +93,7 @@ var main = function () {
         
         return false;
     });
+    
     
     //Loss Calculator
     
@@ -56,9 +136,6 @@ var main = function () {
         
         return false;
     });
-                
-    
-    
 }
 
 

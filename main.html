@@ -4,31 +4,17 @@
         <link rel="stylesheet" type="text/css" href="stylesheet.css">
         <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" defer></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" defer></script>
         <script src="form.js" type="text/javascript" defer></script>
         
     </head>
     
     <body>
         <!--TEST-->
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="input-group">
-              <div class="input-group-btn">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-                </ul>
-              </div><!-- /btn-group -->
-              <input type="text" class="form-control" aria-label="...">
-            </div><!-- /input-group -->
-          </div><!-- /.col-lg-6 -->
-        </div>
+        
+        <p class="test">???</p>
         
         <!--Ratio Calculator-->
         <h2>Brew Ratio Calculator</h2>
@@ -43,16 +29,19 @@
                         <br>
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 col-sm-offset-3 inner-brew-form">
+                                <!--button dropdown-->
                                 <div class="input-group">
-                                    <div class="input-group-btn">
-                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">grams <span class="caret"></span></button>
+                                    <div class="input-group-btn brew-group-btn">
+                                        <button type="button" class="btn btn-default dropdown-toggle cal-select-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">grams<span class="caret"></span></button>
                                         <ul class="dropdown-menu">
-                                            <li>grams</li>
-                                            <li>ounces</li>
+                                            <li><a href="#" id="TESTID">grams</a></li>
+                                            <li><a href="#">ounces</a></li>
+                                            <!--<li><a href="#">tbsp.</a></li>-->
                                         </ul>
                                     </div><!-- /btn-group -->
-                                <input class="form-control" id="coffeeDose" type="number" name="coffeeDose" placeholder="grams">
-                                </div>
+                                    <!--input-->    
+                                    <input class="form-control" id="coffeeDose" type="number" name="coffeeDose">
+                                </div><!--input-group-->
                             </div>
                         </div>
                         <br>
@@ -61,7 +50,17 @@
                         <br>
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 col-sm-offset-3 inner-brew-form">
-                                <input class="form-control inner-loss-form" id="waterDose" type="number" name="waterDose" placeholder="grams">
+                                <div class="input-group">
+                                    <div class="input-group-btn brew-group-btn">
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">grams <span class="caret"></span></button>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">grams</a></li>
+                                            <li><a href="#">ounces</a></li>
+                                            <li><a href="#">tbsp.</a></li>
+                                        </ul>
+                                    </div><!-- /btn-group -->
+                                    <input class="form-control inner-loss-form" id="waterDose" type="number" name="waterDose">
+                                </div>
                             </div>
                         </div>
                         <br>
