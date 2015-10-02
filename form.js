@@ -1,94 +1,77 @@
 
-var unitArray = [0, "grams"];
+//var unitArray = [0, "grams"];
 
 var main = function () {
-        
-        //Dropdown Button Addon and Functions
+   
+    //var oldUnit;
     
+    //Storing old unit value. //Will always happen before clicking on a dropdown item.
+    $('.dropdown-toggle').click(function(){
+        $(this).data("prev", $(this).text());
+    });
+    
+    //Dropdown Button Addon and Functions
     $(".dropdown-menu li a").click(function() {
+        //changes button text to whatever unit you clicked on
         $(this).parent().parent().siblings(".dropdown-toggle:first-child").html($(this).text()+' <span class="caret"></span>');
         $(this).parent().parent().siblings(".dropdown-toggle:first-child").val($(this).text());
         
-        var currentValue = $(this).parent().parent().parent().siblings().val();
-        var currentUnit = $(this).parent().parent().siblings(".dropdown-toggle:first-child").val(); //$(this).text();
+        //some variables
         
+        var currentUnit = $(this).text(); //value(unit) of button
+            //$(this).parent().parent().siblings(".dropdown-toggle:first-child").text(); 
         
-        unitArray.shift();
-        unitArray.push($(this).text());
+        var currentValue = $(this).parent().parent().parent().siblings().val(); //value in box
         
-        var prevUnit = unitArray[0];
+        var oldUnit = $(this).parent().parent().siblings().data("prev"); //previous button value
         
-        //Unit Converter
+        //unit converter
         function unitConvert(value, unit, prev) {
-            if (prev == "grams") {
-                if (unit == "grams"){return value}
-                else if (unit == "ounces"){
+            unit = unit.trim();
+            prev = prev.trim();
+            
+            if (prev === "grams") {
+                if (unit === "grams"){
+                    return value;
+                }
+                else if (unit === "ounces"){
+                    //alert("ham sandwich");
                     return Math.round((parseFloat(value) * 0.035274) * 100) / 100;
                 }
                 /*else if (unit == "tbsp."){
                     return Math.round((parseFloat(value) * 0.18867925) * 10) / 10;
                 }*/
-                else {return value} 
-                
+                else {
+                    return value;
+                }     
             }
-            else if (prev == "ounces") {
-                if (unit == "grams") {
+            else if (prev === "ounces") {
+                if (unit === "grams") {
+                    //alert("banana");
                     return Math.round((parseFloat(value) / 0.035274) * 1) / 1;
                 }
-                else if (unit == "ounces") {return value}
+                else if (unit === "ounces") {
+                    return value;
+                }
                 /*else if (unit == "tbsp."){
                     return Math.round((parseFloat(value) * 0.19000570) * 10) / 10;
                 }*/
-                else {return value}
-                
-                /*switch (unit) {
-                    case "grams":
-                    case "ml":
-                        return Math.round((parseFloat(value) / 0.035274) * 100) / 100;    
-                    case "ounces": 
-                        return value;   
-                    //case "tbsp.": 
-                        //return Math.round((parseFloat(value) * 0.19000570) * 10) / 10; 
-                    default: 
-                        return value;  
-                }*/
+                else {
+                    return value;
+                }  
             }
-
-            /*else if (prev == "tbsp.") {
-                switch (unit) {
-                    case "grams":
-                    case "ml":
-                           return Math.round((parseFloat(value) / 0.18867925) * 10) / 10;
-                    case "ounces": 
-                        return Math.round((parseFloat(value) * 0.19000570) * 10) / 10;  
-                    case "tbsp.": 
-                        return value; 
-                    default: 
-                        return value;
-                }
-            }*/
-            else {return value};
-    }
+            else {
+                //alert("goat attack-" + prev + "-" + unit + "-");
+                return value;
+            }
+        }
         
-        
-        var convert = unitConvert(currentValue, currentUnit, prevUnit);           
-        
+        //converts the value of the textbox
+        var convert = unitConvert(currentValue, currentUnit, oldUnit); 
         $(this).parent().parent().parent().siblings().val(convert);               
     });
+
     
-    
-    //TEST
-    
-    $('.test').click(function() {
-        
-        var testPoop = $('#TESTID').parent().parent().siblings(".dropdown-toggle:first-child").text();//.text();
-        
-        $(this).replaceWith('<p class="test">' + testPoop + ' ' + unitArray[0] + '!!!</p>');
-        
-        return false;
-    }); 
-                
-                
     //Brew Calculator
     
     $('#brewCalForm').submit(function() {
