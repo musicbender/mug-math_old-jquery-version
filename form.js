@@ -2,15 +2,17 @@
 //var unitArray = [0, "grams"];
 
 var main = function () {
-   
-    //var oldUnit;
     
-    //Storing old unit value. //Will always happen before clicking on a dropdown item.
+    
+    //STORE PREVIOUS UNIT. //Will always happen before clicking on a dropdown item.
+    
     $('.dropdown-toggle').click(function(){
         $(this).data("prev", $(this).text());
     });
     
-    //Dropdown Button Addon and Functions
+    
+    //DROPDOWN BUTTON ADDON & FUNCTIONS
+    
     $(".dropdown-menu li a").click(function() {
         //changes button text to whatever unit you clicked on
         $(this).parent().parent().siblings(".dropdown-toggle:first-child").html($(this).text()+' <span class="caret"></span>');
@@ -25,7 +27,7 @@ var main = function () {
         
         var oldUnit = $(this).parent().parent().siblings().data("prev"); //previous button value
         
-        //unit converter
+        //unit conversion
         function unitConvert(value, unit, prev) {
             unit = unit.trim();
             prev = prev.trim();
@@ -38,31 +40,62 @@ var main = function () {
                     //alert("ham sandwich");
                     return Math.round((parseFloat(value) * 0.035274) * 100) / 100;
                 }
-                /*else if (unit == "tbsp."){
-                    return Math.round((parseFloat(value) * 0.18867925) * 10) / 10;
-                }*/
+                else if (unit === "tbsp."){
+                    return Math.round((parseFloat(value) * 0.18867925) * 100) / 100;
+                }
+                else if (unit === "lbs."){
+                    return Math.round((parseFloat(value) / 453.592) * 100) / 100;
+                }
                 else {
-                    return value;
+                    return 000;
                 }     
             }
             else if (prev === "ounces") {
                 if (unit === "grams") {
                     //alert("banana");
-                    return Math.round((parseFloat(value) / 0.035274) * 1) / 1;
+                    return Math.round((parseFloat(value) / 0.035274) * 100) / 100;
                 }
                 else if (unit === "ounces") {
                     return value;
                 }
-                /*else if (unit == "tbsp."){
-                    return Math.round((parseFloat(value) * 0.19000570) * 10) / 10;
-                }*/
+                else if (unit === "tbsp."){
+                    return Math.round((parseFloat(value) / 0.19000570) * 100) / 100;
+                }
+                else if (unit === "lbs."){
+                    return Math.round((parseFloat(value) / 16) * 100) / 100;
+                }
                 else {
-                    return value;
+                    return 000;
                 }  
             }
+            else if (prev === "tbsp."){
+                if (unit === "grams"){
+                    return Math.round((parseFloat(value) / 0.18867925) * 100) / 100;
+                }
+                else if (unit === "ounces"){
+                    return Math.round((parseFloat(value) * 0.19000570) * 100) / 100;
+                }
+                else if (unit === "tbsp."){
+                    return value;
+                }
+                else {
+                    return 000;
+                }
+                
+            }
+            else if (prev === "lbs."){
+                if (unit === "grams"){
+                    return Math.round((parseFloat(value) * 453.592) * 100) / 100;
+                }
+                else if (unit === "ounces"){
+                    return Math.round((parseFloat(value) * 16) * 100) / 100;
+                }
+                else if (unit === "lbs."){
+                    return value;
+                }
+            }
             else {
-                //alert("goat attack-" + prev + "-" + unit + "-");
-                return value;
+                return 000;
             }
         }
         
@@ -72,7 +105,7 @@ var main = function () {
     });
 
     
-    //Brew Calculator
+    //BREW CALCULATOR
     
     $('#brewCalForm').submit(function() {
         var coffeeValue = $('#coffeeDose').val();
@@ -88,7 +121,7 @@ var main = function () {
     });
     
     
-    //Loss Calculator
+    //LOSS CALCULATOR
     
     $('#lossCalForm').submit(function(){
         var preWeightValue = $('#preWeight').val();
@@ -105,7 +138,8 @@ var main = function () {
     });
     
     
-    //Dev Calculator
+    //DEV CALCULATOR
+    
     $('#devCalForm').submit(function(){
     
         var totalMinValue = $('#totalMin').val();
