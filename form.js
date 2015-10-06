@@ -1,10 +1,107 @@
 
-//var unitArray = [0, "grams"];
-
 var main = function () {
     
     
-    //STORE PREVIOUS UNIT. //Will always happen before clicking on a dropdown item.
+    //FIND UNIT OF NEARBY INPUT BOX
+    function findUnitFromInput(id) {
+        return $(id).siblings().children(".dropdown-toggle:first-child").text();
+    }
+    
+    
+    //UNIT CONVERSION
+    function unitConvert(value, unit, prev) {
+        unit = unit.trim();
+        prev = prev.trim();
+
+        if (prev === "grams") {
+            if (unit === "grams"){
+                return value;
+            }
+            else if (unit === "ounces"){
+                return Math.round((parseFloat(value) * 0.035274) * 100) / 100;
+            }
+            else if (unit === "tbsp."){
+                return Math.round((parseFloat(value) * 0.18867925) * 100) / 100;
+            }
+            else if (unit === "lbs."){
+                return Math.round((parseFloat(value) / 453.592) * 100) / 100;
+            }
+            else {
+                return 000;
+            }     
+        }
+        else if (prev === "ounces") {
+            if (unit === "grams") {
+                return Math.round((parseFloat(value) / 0.035274) * 100) / 100;
+            }
+            else if (unit === "ounces") {
+                return value;
+            }
+            else if (unit === "tbsp."){
+                return Math.round((parseFloat(value) / 0.19000570) * 100) / 100;
+            }
+            else if (unit === "lbs."){
+                return Math.round((parseFloat(value) / 16) * 100) / 100;
+            }
+            else {
+                return 000;
+            }  
+        }
+        else if (prev === "tbsp."){
+            if (unit === "grams"){
+                return Math.round((parseFloat(value) / 0.18867925) * 100) / 100;
+            }
+            else if (unit === "ounces"){
+                return Math.round((parseFloat(value) * 0.19000570) * 100) / 100;
+            }
+            else if (unit === "tbsp."){
+                return value;
+            }
+            else {
+                return 000;
+            }
+
+        }
+        else if (prev === "lbs."){
+            if (unit === "grams"){
+                return Math.round((parseFloat(value) * 453.592) * 100) / 100;
+            }
+            else if (unit === "ounces"){
+                return Math.round((parseFloat(value) * 16) * 100) / 100;
+            }
+            else if (unit === "lbs."){
+                return value;
+            }
+        }
+        else {
+            return 000;
+        }
+    }
+
+    //RECONVERTS BACK TO GRAMS
+    function reconvertGrams(unit, value){
+        unit = unit.trim();
+        
+        if (unit === "grams"){
+            return value;
+        }
+        else if (unit === "ounces"){
+            return Math.round((parseFloat(value) / 0.035274) * 100) / 100;
+        }
+        else if (unit === "tbsp."){
+            return Math.round((parseFloat(value) / 0.18867925) * 100) / 100;
+        }
+        else if (unit === "lbs."){
+            return Math.round((parseFloat(value) * 453.592) * 100) / 100;
+        }
+        else {
+            return 000;
+        }     
+    }
+
+    
+    //STORE PREVIOUS UNIT. 
+            //will always happen before clicking on a dropdown item.
     
     $('.dropdown-toggle').click(function(){
         $(this).data("prev", $(this).text());
@@ -19,85 +116,12 @@ var main = function () {
         $(this).parent().parent().siblings(".dropdown-toggle:first-child").val($(this).text());
         
         //some variables
-        
-        var currentUnit = $(this).text(); //value(unit) of button
-            //$(this).parent().parent().siblings(".dropdown-toggle:first-child").text(); 
-        
+        var currentUnit = $(this).text();
         var currentValue = $(this).parent().parent().parent().siblings().val(); //value in box
-        
         var oldUnit = $(this).parent().parent().siblings().data("prev"); //previous button value
         
         //unit conversion
-        function unitConvert(value, unit, prev) {
-            unit = unit.trim();
-            prev = prev.trim();
-            
-            if (prev === "grams") {
-                if (unit === "grams"){
-                    return value;
-                }
-                else if (unit === "ounces"){
-                    //alert("ham sandwich");
-                    return Math.round((parseFloat(value) * 0.035274) * 100) / 100;
-                }
-                else if (unit === "tbsp."){
-                    return Math.round((parseFloat(value) * 0.18867925) * 100) / 100;
-                }
-                else if (unit === "lbs."){
-                    return Math.round((parseFloat(value) / 453.592) * 100) / 100;
-                }
-                else {
-                    return 000;
-                }     
-            }
-            else if (prev === "ounces") {
-                if (unit === "grams") {
-                    //alert("banana");
-                    return Math.round((parseFloat(value) / 0.035274) * 100) / 100;
-                }
-                else if (unit === "ounces") {
-                    return value;
-                }
-                else if (unit === "tbsp."){
-                    return Math.round((parseFloat(value) / 0.19000570) * 100) / 100;
-                }
-                else if (unit === "lbs."){
-                    return Math.round((parseFloat(value) / 16) * 100) / 100;
-                }
-                else {
-                    return 000;
-                }  
-            }
-            else if (prev === "tbsp."){
-                if (unit === "grams"){
-                    return Math.round((parseFloat(value) / 0.18867925) * 100) / 100;
-                }
-                else if (unit === "ounces"){
-                    return Math.round((parseFloat(value) * 0.19000570) * 100) / 100;
-                }
-                else if (unit === "tbsp."){
-                    return value;
-                }
-                else {
-                    return 000;
-                }
-                
-            }
-            else if (prev === "lbs."){
-                if (unit === "grams"){
-                    return Math.round((parseFloat(value) * 453.592) * 100) / 100;
-                }
-                else if (unit === "ounces"){
-                    return Math.round((parseFloat(value) * 16) * 100) / 100;
-                }
-                else if (unit === "lbs."){
-                    return value;
-                }
-            }
-            else {
-                return 000;
-            }
-        }
+        
         
         //converts the value of the textbox
         var convert = unitConvert(currentValue, currentUnit, oldUnit); 
@@ -108,8 +132,8 @@ var main = function () {
     //BREW CALCULATOR
     
     $('#brewCalForm').submit(function() {
-        var coffeeValue = $('#coffeeDose').val();
-        var waterValue = $('#waterDose').val();
+        var coffeeValue = reconvertGrams(findUnitFromInput('#coffeeDose'), $('#coffeeDose').val());
+        var waterValue = reconvertGrams(findUnitFromInput('#waterDose'), $('#waterDose').val());
         
         function findRatio (coffee, water) {
             return Math.round((parseFloat(water) / parseFloat(coffee)) * 10) / 10;
@@ -124,15 +148,14 @@ var main = function () {
     //LOSS CALCULATOR
     
     $('#lossCalForm').submit(function(){
-        var preWeightValue = $('#preWeight').val();
-        var postWeightValue = $('#postWeight').val();
-        
+        var preWeightValue = reconvertGrams(findUnitFromInput('#preWeight'), $('#preWeight').val());
+        var postWeightValue = reconvertGrams(findUnitFromInput('#postWeight'), $('#postWeight').val());
+
         function findLossPercent(pre, post) {
             return Math.round((100 - ((post / pre) * 100)) * 10) / 10;
         }
 
-        var lossPercent = findLossPercent(preWeightValue, postWeightValue);
-        $('.answerLoss').replaceWith('<p class="answerLoss">' + lossPercent + '%</p>');
+        $('.answerLoss').replaceWith('<p class="answerLoss">' + findLossPercent(preWeightValue, postWeightValue) + '%</p>');
         
         return false;
     });
