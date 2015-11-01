@@ -64,7 +64,7 @@ fieldset {
     margin: 0; 
 }
 
-.inner-brew-form {
+.inner-form {
     margin: 0 auto 0 auto;
     font-size: 1.1em;
     
@@ -86,13 +86,6 @@ fieldset {
     height: 275px;
     padding: 20px 0px 10px 0px;
     margin: 0; 
-}
-
-.inner-loss-form {
-    margin: 0 auto 0 auto;
-    font-size: 1.1em;
-    
-    
 }
 
 
@@ -123,7 +116,3 @@ fieldset {
     /*background-color:blue;*/
 }
 
-.inner-dev-form {
-    margin: 0px 0 0px 0;
-    font-size: 1.1em;
-}

@@ -1,6 +1,55 @@
 
 var main = function () {
+    //FORM VALIDATION----------------------------------------------------
     
+   function validate(input1, input2, input3, input4, button, formClass) { 
+       
+       //validation function
+       function valid() {
+           if ((input3 == null) || (input4 == null)){
+               if ((input1.val() == "") || (input2.val() == "")){
+                    button.removeAttr("disabled");
+                    button.attr("disabled", true);
+               }
+               else {
+                   button.removeAttr("disabled");
+               }
+           }
+           else {
+               if ((input1.val() == "") || (input2.val() == "") || (input3.val() == "") || (input4.val() == "")){
+                    button.removeAttr("disabled");
+                    button.attr("disabled", true);
+               }
+               else {
+                   button.removeAttr("disabled");
+               }
+           }
+       }
+       
+       //runs valid() function when arrows are clicked
+       formClass.change(function() {
+           valid();
+       });
+       
+       //runs valid() function when anything is typed into the form
+       formClass.keyup(function() {
+           valid();
+       });
+   }
+    
+    //running each validate() function for each form section when page opens
+    validate($('#coffeeDose'), $('#waterDose'), null, null, $('#submitBrewCal'), $('.brew-form'));
+    validate($('#preWeight'), $('#postWeight'), null, null, $('#submitLossCal'), $('.loss-form'));
+    validate($('#devMin'), $('#devSec'), $('#totalMin'), $('#totalSec'), $('#submitDevCal'), $('.dev-form'));
+    
+    
+    //DISABLE COPY/PASTE------------------------------------------------
+    $('.form-control').bind('cut copy paste taphold contextmenu', function(e) {
+    e.preventDefault();
+    });
+    
+    
+    //UNITS AND UNITCONVERSION-------------------------------------------
     
     //FIND UNIT OF NEARBY INPUT BOX
     function findUnitFromInput(id) {
@@ -108,26 +157,24 @@ var main = function () {
     });
     
     
-    //DROPDOWN BUTTON ADDON & FUNCTIONS
+    //DROPDOWN BUTTON ADDON--------------------------------
     
     $(".dropdown-menu li a").click(function() {
         //changes button text to whatever unit you clicked on
         $(this).parent().parent().siblings(".dropdown-toggle:first-child").html($(this).text()+' <span class="caret"></span>');
         $(this).parent().parent().siblings(".dropdown-toggle:first-child").val($(this).text());
         
-        //some variables
         var currentUnit = $(this).text();
         var currentValue = $(this).parent().parent().parent().siblings().val(); //value in box
         var oldUnit = $(this).parent().parent().siblings().data("prev"); //previous button value
         
-        //unit conversion
-        
-        
         //converts the value of the textbox
         var convert = unitConvert(currentValue, currentUnit, oldUnit); 
-        $(this).parent().parent().parent().siblings().val(convert);               
+        $(this).parent().parent().parent().siblings().val(convert);
+        //return false;
     });
 
+    //CALCULATORS-------------------------------------------------
     
     //BREW CALCULATOR
     
@@ -138,8 +185,8 @@ var main = function () {
         function findRatio (coffee, water) {
             return Math.round((parseFloat(water) / parseFloat(coffee)) * 10) / 10;
         }
-        
-        $('.answerBrew').replaceWith('<p class="answerBrew">1 : ' + findRatio(coffeeValue, waterValue) + ' Ratio</p>');
+            
+        $('.answerBrew').text('1 : ' + findRatio(coffeeValue, waterValue) + ' Ratio');
         
         return false;
     });
@@ -155,7 +202,7 @@ var main = function () {
             return Math.round((100 - ((post / pre) * 100)) * 10) / 10;
         }
 
-        $('.answerLoss').replaceWith('<p class="answerLoss">' + findLossPercent(preWeightValue, postWeightValue) + '%</p>');
+        $('.answerLoss').text(findLossPercent(preWeightValue, postWeightValue) + '%');
         
         return false;
     });
@@ -182,8 +229,8 @@ var main = function () {
         }
         
         var devPercent = findPercent(totalTime, totalDev);
-        $('.answerDev').replaceWith('<p class="answerDev">' + devPercent + '%</p>');
         
+        $('.answerDev').text(devPercent + '%');
         return false;
     });
 }
