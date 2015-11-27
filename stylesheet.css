@@ -5,7 +5,7 @@ html body {
 }
 
 .container {
-    margin: 5px auto 50px auto;
+    margin: 5px auto 100px auto;
     text-align: center;
 }
 
@@ -48,6 +48,12 @@ h2 {
 fieldset {
     border:0px;
 }
+
+.inner-form {
+    margin: 0 auto 0 auto;
+    font-size: 1.1em;
+}
+
 /*Brew Calculator*/
 
 #brewCal {
@@ -64,12 +70,30 @@ fieldset {
     margin: 0; 
 }
 
-.inner-form {
-    margin: 0 auto 0 auto;
-    font-size: 1.1em;
-    
-    
+
+
+/*Extraction Yeild Calculator*/
+
+#extCal {
+    background-color:plum;
 }
+
+#extCalForm {
+    background-color:plum;
+    font-size:1.5em;
+    border: 0px;
+    text-align: center;
+    height: 275px;
+    padding: 20px 0px 10px 0px;
+    margin: 0; 
+}
+
+#extform {
+    margin: 0 auto 20px auto;
+    padding: 0 0 0 30px;
+    /*background-color:blue;*/
+}
+
 
 
 /*Loss Calculator*/

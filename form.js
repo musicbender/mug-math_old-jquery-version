@@ -3,7 +3,6 @@ var main = function () {
     //FORM VALIDATION----------------------------------------------------
     
    function validate(input1, input2, input3, input4, button, formClass) { 
-       
        //validation function
        function valid() {
            if ((input3 == null) || (input4 == null)){
