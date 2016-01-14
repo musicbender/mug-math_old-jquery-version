@@ -1,3 +1,5 @@
+/*******General*******/
+
 html body {
     margin: 0;
     padding: 0;
@@ -7,13 +9,16 @@ html body {
 .container {
     margin: 5px auto 100px auto;
     text-align: center;
+    -webkit-box-shadow: 4px 4px 8px 0px rgba(0,0,0,0.58);
+    -moz-box-shadow: 4px 4px 8px 0px rgba(0,0,0,0.58);
+    box-shadow: 4px 4px 8px 0px rgba(0,0,0,0.58);
 }
 
 h2 {
     margin: 0 auto;
     padding: 5px 0 5px 0;
     text-align: center;
-    font-size:4em;
+    font-size:2em;
     border-top:2px solid black;
     border-right: 2px solid black;
     border-bottom: 2px solid black;
@@ -21,9 +26,35 @@ h2 {
     max-width:500px;
     
 }
+/*******Title Section*******/
 
+.title {
+    margin: 50px auto;
+    text-align: center;
+}
 
-/* All Calculators */
+.title-header {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 6em;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.math {
+    font-weight: 800;
+}
+
+.logo {
+    width: 60px;
+}
+
+.sub-title {
+    margin: 15px;
+    color: grey;
+    font-size: 2em;
+}
+
+/*******All Calculators*******/
 
 .cal {
     margin: 0 auto 0 auto;
@@ -54,7 +85,7 @@ fieldset {
     font-size: 1.1em;
 }
 
-/*Brew Calculator*/
+/*******Brew Calculator*******/
 
 #brewCal {
     background-color: darkturquoise;
@@ -72,7 +103,7 @@ fieldset {
 
 
 
-/*Extraction Yeild Calculator*/
+/*******Extraction Yeild Calculator*******/
 
 #extCal {
     background-color:plum;
@@ -96,7 +127,7 @@ fieldset {
 
 
 
-/*Loss Calculator*/
+/*******Loss Calculator*******/
 
 #lossCal {
     background-color: deepskyblue;
@@ -113,7 +144,7 @@ fieldset {
 }
 
 
-/*Development Calculator*/
+/*******Development Calculator*******/
 
 #devCal {
     background-color:coral;

@@ -2,9 +2,11 @@
 <html lang="en">
     <head>
         <title>Coffee Calculators</title>
-        <link rel="stylesheet" type="text/css" href="stylesheet.css">
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        
+        <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,800' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
         
         <script src="jquery-2.1.4.min.js" defer></script>
         <script src="js/bootstrap.min.js" defer></script>
@@ -12,12 +14,20 @@
     </head>
     
     <body>
-        
+    <!--Title Section-->
+       <section class="title">
+           <h1 class="title-header">Mug<span class="math">Math</span></h1>
+           <img class="logo" src="images/mugmath_logo.png" />
+           <h3 class="sub-title">A nerd-made set of nerdy calculators for coffee nerds.</h3>
+       </section>
+       <section class="navbar">
+           
+       </section>
+       
         <!--Ratio Calculator-->
         <h2>Brew Ratio Calculator</h2>
         <div class="container">
             <div class="row">
-                
                 <!--cal side-->
                 <div class="col-md-6 cal" id="brewCal">
                     <form class="form-control calform" id="brewCalForm">
@@ -55,7 +65,7 @@
                                             <li><a href="#">ounces</a></li>
                                         </ul>
                                     </div><!-- /btn-group -->
-                                    <input class="form-control inner-form brew-form" id="waterDose" type="number" name="waterDose" min="0" max="9999">
+                                    <input class="form-control brew-form" id="waterDose" type="number" name="waterDose" min="0" max="9999">
                                 </div>
                             </div>
                         </div>
@@ -132,7 +142,7 @@
             </div>
         </div>
         
-        <!--Loss Calculator-->
+        <!--Moisture Loss Calculator-->
         <h2>Moisture Loss Calculator</h2>
         <div class="container">
             <div class="row">
@@ -171,7 +181,7 @@
                                             <li><a href="#">lbs.</a></li>
                                         </ul>
                                     </div><!-- /btn-group -->
-                                    <input class="form-control inner-form loss-form" id= "postWeight" type="number" name="postWeight" id="postWeight" min="0" max="9999">
+                                    <input class="form-control loss-form" id= "postWeight" type="number" name="postWeight" id="postWeight" min="0" max="9999">
                                 </div>
                             </div>
                         </div>
@@ -252,6 +262,6 @@
         
     </body>
             
-            
+<!--            Division graphic by <a href="http://graphicsbay.com">Graphicsbay</a> and Circle graphic by <a href="http://www.danielbruce.se">Daniel Bruce</a> and Bar Icons graphic by <a href="http://www.sm-artists.com">Spovv</a> from <a href="http://www.flaticon.com/">Flaticon</a> are licensed under <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a>. Made with <a href="http://logomakr.com" title="Logo Maker">Logo Maker</a>-->
 
 </html>

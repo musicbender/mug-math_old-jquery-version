@@ -211,17 +211,17 @@ var main = function () {
     
     $('#devCalForm').submit(function(){
     
-        var totalMinValue = $('#totalMin').val();
-        var totalSecValue = $('#totalSec').val();
-        var devMinValue = $('#devMin').val();
-        var devSecValue = $('#devSec').val();
+        var totalMinValue = $('#totalMin').val(),
+            totalSecValue = $('#totalSec').val(),
+            devMinValue = $('#devMin').val(),
+            devSecValue = $('#devSec').val();
 
         function findSeconds (min, sec) {
             return (parseFloat(min) * 60) + parseFloat(sec);
         }
 
-        var totalTime = findSeconds(totalMinValue, totalSecValue);
-        var totalDev = findSeconds(devMinValue, devSecValue);
+        var totalTime = findSeconds(totalMinValue, totalSecValue),
+            totalDev = findSeconds(devMinValue, devSecValue);
         
         function findPercent (total, dev){
             return Math.round((100 - ((dev / total) * 100)) * 10) / 10;   
