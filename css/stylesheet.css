@@ -1,6 +1,5 @@
 /*******General*******/
-
-html body {
+html, body {
     margin: 0;
     padding: 0;
     background-color: whitesmoke;
@@ -26,8 +25,8 @@ h2 {
     max-width:500px;
     
 }
-/*******Title Section*******/
 
+/*******Title Section*******/
 .title {
     margin: 50px auto;
     text-align: center;
@@ -49,13 +48,12 @@ h2 {
 }
 
 .sub-title {
-    margin: 15px;
+    margin: 15px 0 100px 0;
     color: grey;
     font-size: 2em;
 }
 
 /*******All Calculators*******/
-
 .cal {
     margin: 0 auto 0 auto;
     border:0px solid transparent;
@@ -86,7 +84,6 @@ fieldset {
 }
 
 /*******Brew Calculator*******/
-
 #brewCal {
     background-color: darkturquoise;
 }
@@ -101,10 +98,7 @@ fieldset {
     margin: 0; 
 }
 
-
-
 /*******Extraction Yeild Calculator*******/
-
 #extCal {
     background-color:plum;
 }
@@ -125,10 +119,7 @@ fieldset {
     /*background-color:blue;*/
 }
 
-
-
 /*******Loss Calculator*******/
-
 #lossCal {
     background-color: deepskyblue;
 }
@@ -143,9 +134,7 @@ fieldset {
     margin: 0; 
 }
 
-
 /*******Development Calculator*******/
-
 #devCal {
     background-color:coral;
 }
@@ -168,6 +157,5 @@ fieldset {
 #timeform {
     margin: 0 auto 20px auto;
     padding: 0 0 0 30px;
-    /*background-color:blue;*/
 }
 
