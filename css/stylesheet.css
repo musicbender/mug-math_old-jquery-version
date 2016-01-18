@@ -48,7 +48,8 @@ h2 {
 }
 
 .sub-title {
-    margin: 15px 0 100px 0;
+    width: 100%;
+    margin: 15px auto;
     color: grey;
     font-size: 2em;
 }
@@ -159,3 +160,24 @@ fieldset {
     padding: 0 0 0 30px;
 }
 
+/*******Media Queries*******/
+@media only screen and (max-width: 800px) {
+    .sub-title {
+        width: 68%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .title-header {
+        font-size: 4.5em;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .title-header {
+        font-size: 3.5em;
+    }
+    .sub-title {
+        font-size: 1.5em;
+    }
+}
