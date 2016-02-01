@@ -13,8 +13,15 @@ var main = function () {
        });
        //validation function
        function valid() {
-           if ((input3 == null) || (input4 == null)) {
+           if ((input3 == null) && (input4 == null)) {
                if ((input1.val() == "") || (input2.val() == "")) {
+                    button.removeAttr("disabled");
+                    button.attr("disabled", true);
+               } else {
+                   button.removeAttr("disabled");
+               }
+           } else if ((input3 !== null) && (input4 == null)) {
+               if ((input1.val() == "") || (input2.val() == "") || (input3.val() == "")) {
                     button.removeAttr("disabled");
                     button.attr("disabled", true);
                } else {
@@ -33,6 +40,7 @@ var main = function () {
     
     //running each validate() function for each form section when page opens
     validate($('#coffeeDose'), $('#waterDose'), null, null, $('#submitBrewCal'), $('.brew-form'));
+    validate($('#tdsPercent'), $('#dryMass'), $('#brewMass'), null, $('#submitExtCal'), $('.ext-form'));
     validate($('#preWeight'), $('#postWeight'), null, null, $('#submitLossCal'), $('.loss-form'));
     validate($('#devMin'), $('#devSec'), $('#totalMin'), $('#totalSec'), $('#submitDevCal'), $('.dev-form'));
     
@@ -151,6 +159,22 @@ var main = function () {
         return false;
     });
     
+    //EXTRACTION YIELD CALCULATOR
+    $('#extCalForm').submit(function(){
+        var tdsValue = $('#tdsPercent').val(),
+            dryMassValue = $('#dryMass').val(),
+            brewMassValue = $('#brewMass').val();
+        
+        function findExtPercent(tds, dry, brew) {
+//            return brew * (tds / dry);
+            return Math.round((brew * (tds / dry)) * 100) / 100;  
+        }
+        
+        $('.answerExt').text(findExtPercent(tdsValue, dryMassValue, brewMassValue) + '%');
+        
+        return false;
+    });
+    
     //LOSS CALCULATOR
     $('#lossCalForm').submit(function(){
         var preWeightValue = reconvertGrams(findUnitFromInput('#preWeight'), $('#preWeight').val()),
@@ -184,7 +208,5 @@ var main = function () {
         return false;
     });
 }
-
-
 
 $(document).ready(main);

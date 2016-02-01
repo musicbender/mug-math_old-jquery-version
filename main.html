@@ -16,7 +16,6 @@
         <script src="js/bootstrap.min.js" defer></script>
         <script src="js/form.js" type="text/javascript" defer></script>
     </head>
-    
     <body>
         <!--Title Section-->
        <section class="title">
@@ -24,6 +23,7 @@
            <img class="logo" src="images/mugmath_logo.png" />
            <h3 class="sub-title">A nerd-made set of nerdy calculators for coffee nerds.</h3>
        </section>
+       
         <!--Ratio Calculator-->
         <h2>Brew Ratio Calculator</h2>
         <div class="container">
@@ -47,7 +47,7 @@
                                         </ul>
                                     </div><!-- /btn-group -->
                                     <!--input-->    
-                                    <input class="form-control brew-form" id="coffeeDose" type="number" name="coffeeDose" min="0" max="9999">
+                                    <input class="form-control brew-form" id="coffeeDose" type="number" name="coffeeDose" min="0" max="9999" step="any">
                                 </div><!--input-group-->
                             </div>
                         </div>
@@ -65,7 +65,7 @@
                                             <li><a href="#">ounces</a></li>
                                         </ul>
                                     </div><!-- /btn-group -->
-                                    <input class="form-control brew-form" id="waterDose" type="number" name="waterDose" min="0" max="9999">
+                                    <input class="form-control brew-form" id="waterDose" type="number" name="waterDose" min="0" max="9999" step="any">
                                 </div>
                             </div>
                         </div>
@@ -73,7 +73,6 @@
                         <button type="submit" class="btn btn-default" id="submitBrewCal" disabled >Calculate</button>
                     </form>
                 </div>
-                
                 <!--answer side-->
                 <div class="col-md-6 answerbox">
                     <p class="answerBrew"></p>
@@ -85,12 +84,10 @@
         <h2>Extraction Yield Calculator</h2>
         <div class="container">
             <div class="row">
-                
                 <!--cal side-->
                 <div class="col-md-6 cal" id="extCal">
                     <form class="form-control extform" id="extCalForm">
                         <div class="row">
-                            
                             <!--tds-->
                             <div class="col-sm-12" id="tds">
                                 <div class="row">
@@ -98,11 +95,10 @@
                                 </div>
                                 <div class="row" id="extform">
                                     <div class="col-xs-5 col-xs-offset-3">
-                                        <input type="number" class="form-control ext-form" placeholder="min" name="tdsPercent" id="tdsPercent" min="0" max="99">
+                                        <input type="number" class="form-control ext-form" placeholder="min" name="tdsPercent" id="tdsPercent" min="0" max="99" step="any">
                                     </div>
                                 </div>
-                            </div>
-                            
+                            </div>      
                             <!--coffee mass-->
                             <div class="col-sm-12" id="coffee Mass">
                                 <div class="row">
@@ -116,25 +112,19 @@
                                 </div>
                                 <div class="row" id="extform">
                                     <div class="col-xs-5">
-                                        <input type="number" class="form-control ext-form" placeholder="grams" name="dryMass" id="dryMass" min="0" max="999">
+                                        <input type="number" class="form-control ext-form" placeholder="grams" name="dryMass" id="dryMass" min="0" max="999" step="any">
                                     </div>
                                     <div class="col-xs-1">
                                         <p>  </p>
                                     </div>
                                     <div class="col-xs-5">
-                                        <input type="number" class="form-control ext-form" placeholder="grams" name="brewMass" id="brewMass" min="0" max="999">
+                                        <input type="number" class="form-control ext-form" placeholder="grams" name="brewMass" id="brewMass" min="0" max="999" step="any">
                                     </div>    
-                                </div>
-                                
+                                </div>   
                             </div>
-                
-                    
                         <button type="submit" class="btn btn-default" id="submitExtCal" disabled>Calculate</button>
-                            
-                        
                     </form>
                 </div>
-                
                 <!--answer side-->
                 <div class="col-md-6 answerbox">
                     <p class="answerExt"></p>
@@ -163,7 +153,7 @@
                                             <li><a href="#">lbs.</a></li>
                                         </ul>
                                     </div><!-- /btn-group -->
-                                    <input class="form-control loss-form" id="preWeight" type="number" name="preWeight" min="0" max="9999">
+                                    <input class="form-control loss-form" id="preWeight" type="number" name="preWeight" min="0" max="9999" step="any">
                                 </div>
                             </div>
                         </div>
@@ -181,7 +171,7 @@
                                             <li><a href="#">lbs.</a></li>
                                         </ul>
                                     </div><!-- /btn-group -->
-                                    <input class="form-control loss-form" id= "postWeight" type="number" name="postWeight" id="postWeight" min="0" max="9999">
+                                    <input class="form-control loss-form" id= "postWeight" type="number" name="postWeight" id="postWeight" min="0" max="9999" step="any">
                                 </div>
                             </div>
                         </div>
@@ -189,7 +179,6 @@
                         <button type="submit" class="btn btn-default" id="submitLossCal" disabled >Calculate</button>
                     </form>
                 </div>
-                
                 <!--answer side-->
                 <div class="col-md-6 answerbox">
                     <p class="answerLoss"></p>
@@ -197,17 +186,14 @@
             </div>
         </div>
         
-        
         <!--Dev Calculator-->
         <h2>Roast Development Calculator</h2>
         <div class="container">
             <div class="row">
-                
                 <!--cal side-->
                 <div class="col-md-6 cal" id="devCal">
                     <form class="form-control calform" id="devCalForm">
-                        <div class="row">
-                            
+                        <div class="row"> 
                             <!--devtime-->
                             <div class="col-sm-12" id="devTime">
                                 <div class="row">
@@ -215,17 +201,16 @@
                                 </div>
                                 <div class="row" id="timeform">
                                     <div class="col-xs-5">
-                                        <input type="number" class="form-control dev-form" placeholder="min" name="devMin" id="devMin" min="0" max="59">
+                                        <input type="number" class="form-control dev-form" placeholder="min" name="devMin" id="devMin" min="0" max="59" step="any">
                                     </div>
                                     <div class="col-xs-1">
                                         <p>:</p>
                                     </div>
                                     <div class="col-xs-5">
-                                        <input type="number" class="form-control dev-form" placeholder="sec" name="devSec" id="devSec" min="0" max="59">
+                                        <input type="number" class="form-control dev-form" placeholder="sec" name="devSec" id="devSec" min="0" max="59" step="any">
                                     </div>    
                                 </div>
                             </div>
-                            
                             <!--totaltime-->
                             <div class="col-sm-12" id="totalTime">
                                 <div class="row">
@@ -233,16 +218,15 @@
                                 </div>
                                 <div class="row" id="timeform">
                                     <div class="col-xs-5">
-                                        <input type="number" class="form-control dev-form" placeholder="min" name="totalMin" id="totalMin" min="0" max="59">
+                                        <input type="number" class="form-control dev-form" placeholder="min" name="totalMin" id="totalMin" min="0" max="59" step="any">
                                     </div>
                                     <div class="col-xs-1">
                                         <p>:</p>
                                     </div>
                                     <div class="col-xs-5">
-                                        <input type="number" class="form-control dev-form" placeholder="sec" name="totalSec" id="totalSec" min="0" max="59">
+                                        <input type="number" class="form-control dev-form" placeholder="sec" name="totalSec" id="totalSec" min="0" max="59" step="any">
                                     </div>    
-                                </div>
-                                
+                                </div>   
                             </div>
                         </div>
                         <div class="row">
@@ -252,7 +236,6 @@
                         </div>
                     </form>
                 </div>
-                
                 <!--answer side-->
                 <div class="col-md-6 answerbox">
                     <p class="answerDev"></p>
