@@ -23,13 +23,14 @@ h2 {
     border-bottom: 2px solid black;
     border-left: 2px solid black;
     max-width:500px;
-    
 }
 
 /*******Title Section*******/
 .title {
-    margin: 50px auto;
+    margin: -20px auto 80px auto;
+    padding: 40px 0 40px 0;
     text-align: center;
+    background-color: #e3e3e3;
 }
 
 .title-header {
