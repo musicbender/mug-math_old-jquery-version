@@ -171,7 +171,6 @@ var main = function () {
         }
         
         $('.answerExt').text(findExtPercent(tdsValue, dryMassValue, brewMassValue) + '%');
-        
         return false;
     });
     
@@ -183,6 +182,7 @@ var main = function () {
         function findLossPercent(pre, post) {
             return Math.round((100 - ((post / pre) * 100)) * 10) / 10;
         }
+        
         $('.answerLoss').text(findLossPercent(preWeightValue, postWeightValue) + '%');
         return false;
     });

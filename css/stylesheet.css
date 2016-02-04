@@ -9,8 +9,8 @@ html, body {
     margin: 5px auto 100px auto;
     text-align: center;
     -webkit-box-shadow: 4px 4px 8px 0px rgba(0,0,0,0.58);
-    -moz-box-shadow: 4px 4px 8px 0px rgba(0,0,0,0.58);
-    box-shadow: 4px 4px 8px 0px rgba(0,0,0,0.58);
+    -moz-box-shadow:    4px 4px 8px 0px rgba(0,0,0,0.58);
+    box-shadow:         4px 4px 8px 0px rgba(0,0,0,0.58);
 }
 
 h2 {
