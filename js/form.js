@@ -207,6 +207,10 @@ var main = function () {
         $('.answerDev').text(findPercent(totalTime, totalDev) + '%');
         return false;
     });
+    
+    //TOOLTIP
+    $('.popover-div').popover();
+  
 }
 
 $(document).ready(main);
