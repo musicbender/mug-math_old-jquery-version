@@ -85,6 +85,12 @@ fieldset {
     font-size: 1.1em;
 }
 
+.tooltip-div {
+    display: block;
+    color: black;
+    z-index: 20;
+}
+
 /*******Brew Calculator*******/
 #brewCal {
     background-color: darkturquoise;
