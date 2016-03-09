@@ -22,7 +22,7 @@ module.exports = function(grunt) {
         },
         css: {
             files: '**/*.scss',
-            tasks: ['sass', 'uncss', 'concat:css', 'cssmin'],
+            tasks: ['sass', 'concat:css', 'cssmin'],
             options: {
                 debounceDelay: 250,
                 spawn: false
@@ -61,11 +61,11 @@ module.exports = function(grunt) {
             separator: ';\n'
         },
         scripts: {
-            src: ['js/vendor/*.js', '!js/vendor/modernizr.js', 'js/*.js', '!js/build.pretty.js'],
+            src: ['js/vendor/jquery-1.11.3.min.js', 'js/vendor/bootstrap.min.js', 'js/vendor/custom-modernizr.js', '!js/vendor/modernizr.js', 'js/*.js'],
             dest: 'build/build.js'
         },
         css: {
-            src: ['!css/build.pretty.css', '!css/*.map', 'css/vendor/*.css', 'css/*.css' ],
+            src: ['!css/*.map', 'css/vendor/normalize.css', 'css/vendor/bootstrap.min.css', 'css/*.css' ],
             dest: 'build/build.css'
         }
     },
@@ -88,6 +88,9 @@ module.exports = function(grunt) {
       }
     },
     uncss: {
+      options: {
+          timeout: 2000
+      },
       dist: {
         files: {
           'css/main.css': ['index.html']
