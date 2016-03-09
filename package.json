@@ -1,0 +1,32 @@
+{
+  "name": "mug-math",
+  "version": "1.0.0",
+  "description": "Several calculator forms for important calculations for brewing and roasting coffee.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/musicbender/Coffee-Caclulator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/musicbender/Coffee-Caclulator/issues"
+  },
+  "homepage": "https://github.com/musicbender/Coffee-Caclulator#readme",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.0",
+    "grunt-contrib-cssmin": "^1.0.0",
+    "grunt-contrib-imagemin": "^1.0.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^1.0.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-modernizr": "^1.0.2",
+    "grunt-uncss": "^0.5.0"
+  }
+}

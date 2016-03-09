@@ -1,3 +1,11 @@
+/*******Import*******/
+
+@import 'helpers/_variables.scss';
+@import 'helpers/_functions.scss';
+@import 'helpers/_mixins.scss';
+@import 'helpers/_placeholders.scss';
+
+
 /*******General*******/
 html, body {
     margin: 0;
@@ -121,8 +129,8 @@ fieldset {
 }
 
 .popover-content {
-    background-color: #fff; 
-    color: #000; 
+    background-color: #fff;
+    color: #000;
 /*    border: 2px solid black;*/
     border-radius: 0;
     padding: 15px;
@@ -147,7 +155,7 @@ fieldset {
     text-align: center;
     height: 275px;
     padding: 20px 0px 10px 0px;
-    margin: 0; 
+    margin: 0;
 }
 
 /*******Extraction Yeild Calculator*******/
@@ -162,7 +170,7 @@ fieldset {
     text-align: center;
     height: 275px;
     padding: 20px 0px 10px 0px;
-    margin: 0; 
+    margin: 0;
 }
 
 #extform {
@@ -183,7 +191,7 @@ fieldset {
     text-align: center;
     height: 275px;
     padding: 20px 0px 10px 0px;
-    margin: 0; 
+    margin: 0;
 }
 
 /*******Development Calculator*******/
@@ -198,7 +206,7 @@ fieldset {
     text-align: center;
     height: 275px;
     padding: 20px 0px 10px 0px;
-    margin: 0; 
+    margin: 0;
 }
 
 #colontime {
@@ -212,23 +220,5 @@ fieldset {
 }
 
 /*******Media Queries*******/
-@media only screen and (max-width: 800px) {
-    .sub-title {
-        width: 68%;
-    }
-}
 
-@media only screen and (max-width: 500px) {
-    .title-header {
-        font-size: 4.5em;
-    }
-}
-
-@media only screen and (max-width: 400px) {
-    .title-header {
-        font-size: 3.5em;
-    }
-    .sub-title {
-        font-size: 1.5em;
-    }
-}
+@import 'media/_media-queries.scss';
