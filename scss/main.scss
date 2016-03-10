@@ -1,24 +1,24 @@
-/*******Import*******/
+html, body {
+    margin: 0;
+    padding: 0;
+}
 
+/*******Imports*******/
 @import 'helpers/_variables.scss';
 @import 'helpers/_functions.scss';
 @import 'helpers/_mixins.scss';
 @import 'helpers/_placeholders.scss';
 
-
 /*******General*******/
-html, body {
+body {
     margin: 0;
-    padding: 0;
-    background-color: whitesmoke;
+     background-color: whitesmoke;
 }
 
 .container {
     margin: 5px auto 100px auto;
     text-align: center;
-    -webkit-box-shadow: 4px 4px 8px 0px rgba(0,0,0,0.58);
-    -moz-box-shadow:    4px 4px 8px 0px rgba(0,0,0,0.58);
-    box-shadow:         4px 4px 8px 0px rgba(0,0,0,0.58);
+    @extend %shadowed;
 }
 
 h2 {
@@ -26,10 +26,7 @@ h2 {
     padding: 5px 0 5px 0;
     text-align: center;
     font-size:2em;
-    border-top:2px solid black;
-    border-right: 2px solid black;
-    border-bottom: 2px solid black;
-    border-left: 2px solid black;
+    border: 2px solid black;
     max-width:500px;
 }
 
@@ -40,9 +37,10 @@ a:focus {
 /*******Title Section*******/
 .title {
     margin: -20px auto 80px auto;
+    width: 100%;
     padding: 40px 0 40px 0;
     text-align: center;
-    background-color: #e3e3e3;
+    background-color: $lightGrey;
 }
 
 .title-header {
@@ -63,7 +61,7 @@ a:focus {
 .sub-title {
     width: 100%;
     margin: 15px auto;
-    color: grey;
+    color: $grey;
     font-size: 2em;
 }
 
@@ -81,8 +79,8 @@ a:focus {
     border: 0px;
     text-align: center;
     font-size:3.5em;
-    color:whitesmoke;
-    background-color: darkgrey;
+    color: $smokeWhite;
+    background-color: $darkGrey;
 }
 
 .answerbox p {
@@ -98,58 +96,18 @@ fieldset {
     font-size: 1.1em;
 }
 
-.popover-div {
-    position: absolute;
-    top: 78%;
-    left: calc(95% - 30px);
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    vertical-align: middle;
-    text-align: center;
-    font-size: 0.5em;
-    color: #7f7f7f;
-    background-color: #b8b8b8;
-    cursor: pointer;
-    text-decoration: none;
-    opacity: 1;
-}
+/*******Popover*******/
 
-.popover-div:focus {
-    text-decoration: none;
-}
-
-.popover {
-    position: relative;
-    border-radius: 0;
-}
-
-.fade.in {
-    opacity: 0.92;
-}
-
-.popover-content {
-    background-color: #fff;
-    color: #000;
-/*    border: 2px solid black;*/
-    border-radius: 0;
-    padding: 15px;
-    opacity: 1;
-    font-size: 20px;
-}
-
-.popover-div:hover {
-    background-color: #c7c7c7;
-    text-decoration: none;
-}
+@import 'components/_popover.scss';
 
 /*******Brew Calculator*******/
+
 #brewCal {
-    background-color: darkturquoise;
+    background-color: $teal;
 }
 
 #brewCalForm {
-    background-color: darkturquoise;
+    background-color: $teal;
     font-size:1.5em;
     border: 0px;
     text-align: center;
@@ -160,11 +118,11 @@ fieldset {
 
 /*******Extraction Yeild Calculator*******/
 #extCal {
-    background-color:plum;
+    background-color: $plum;
 }
 
 #extCalForm {
-    background-color:plum;
+    background-color: $plum;
     font-size:1.5em;
     border: 0px;
     text-align: center;
@@ -176,16 +134,15 @@ fieldset {
 #extform {
     margin: 0 auto 20px auto;
     padding: 0 0 0 40px;
-    /*background-color:blue;*/
 }
 
 /*******Loss Calculator*******/
 #lossCal {
-    background-color: deepskyblue;
+    background-color: $blue;
 }
 
 #lossCalForm {
-    background-color:deepskyblue;
+    background-color: $blue;
     font-size:1.5em;
     border: 0px;
     text-align: center;
@@ -196,11 +153,11 @@ fieldset {
 
 /*******Development Calculator*******/
 #devCal {
-    background-color:coral;
+    background-color: $orange;
 }
 
 #devCalForm {
-    background-color:coral;
+    background-color: $orange;
     font-size:1.5em;
     border: 0px;
     text-align: center;

@@ -47,7 +47,7 @@ module.exports = function(grunt) {
     modernizr: {
         dist: {
           devFile: 'js/vendor/modernizr.js',
-          outputFile: 'js/vendor/custom-modernizr.js',
+          outputFile: 'build/vendor/custom-modernizr.js',
           files: {
             src: [
               'js/*.js',
@@ -61,7 +61,7 @@ module.exports = function(grunt) {
             separator: ';\n'
         },
         scripts: {
-            src: ['js/vendor/jquery-1.11.3.min.js', 'js/vendor/bootstrap.min.js', 'js/vendor/custom-modernizr.js', '!js/vendor/modernizr.js', 'js/*.js'],
+            src: ['js/vendor/bootstrap.min.js', '!js/vendor/custom-modernizr.js', '!js/vendor/modernizr.js', 'js/*.js'],
             dest: 'build/build.js'
         },
         css: {

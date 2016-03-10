@@ -1,26 +1,29 @@
-/*******Import*******/
-/*******General*******/
 html, body {
   margin: 0;
-  padding: 0;
+  padding: 0; }
+
+/*******Imports*******/
+/*******Colors*******/
+.container {
+  -webkit-box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.58);
+  -moz-box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.58);
+  box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.58); }
+
+/*******General*******/
+body {
+  margin: 0;
   background-color: whitesmoke; }
 
 .container {
   margin: 5px auto 100px auto;
-  text-align: center;
-  -webkit-box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.58);
-  -moz-box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.58);
-  box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.58); }
+  text-align: center; }
 
 h2 {
   margin: 0 auto;
   padding: 5px 0 5px 0;
   text-align: center;
   font-size: 2em;
-  border-top: 2px solid black;
-  border-right: 2px solid black;
-  border-bottom: 2px solid black;
-  border-left: 2px solid black;
+  border: 2px solid black;
   max-width: 500px; }
 
 a:focus {
@@ -29,6 +32,7 @@ a:focus {
 /*******Title Section*******/
 .title {
   margin: -20px auto 80px auto;
+  width: 100%;
   padding: 40px 0 40px 0;
   text-align: center;
   background-color: #e3e3e3; }
@@ -48,7 +52,7 @@ a:focus {
 .sub-title {
   width: 100%;
   margin: 15px auto;
-  color: grey;
+  color: #808080;
   font-size: 2em; }
 
 /*******All Calculators*******/
@@ -64,8 +68,8 @@ a:focus {
   border: 0px;
   text-align: center;
   font-size: 3.5em;
-  color: whitesmoke;
-  background-color: darkgrey; }
+  color: #f5f5f5;
+  background-color: #a9a9a9; }
 
 .answerbox p {
   margin: 0 auto 0 auto; }
@@ -77,6 +81,7 @@ fieldset {
   margin: 0 auto 0 auto;
   font-size: 1.1em; }
 
+/*******Popover*******/
 .popover-div {
   position: absolute;
   top: 78%;
@@ -101,7 +106,7 @@ fieldset {
   border-radius: 0; }
 
 .fade.in {
-  opacity: 0.92; }
+  opacity: 1; }
 
 .popover-content {
   background-color: #fff;
@@ -118,10 +123,10 @@ fieldset {
 
 /*******Brew Calculator*******/
 #brewCal {
-  background-color: darkturquoise; }
+  background-color: #00ced1; }
 
 #brewCalForm {
-  background-color: darkturquoise;
+  background-color: #00ced1;
   font-size: 1.5em;
   border: 0px;
   text-align: center;
@@ -131,10 +136,10 @@ fieldset {
 
 /*******Extraction Yeild Calculator*******/
 #extCal {
-  background-color: plum; }
+  background-color: #dda0dd; }
 
 #extCalForm {
-  background-color: plum;
+  background-color: #dda0dd;
   font-size: 1.5em;
   border: 0px;
   text-align: center;
@@ -144,15 +149,14 @@ fieldset {
 
 #extform {
   margin: 0 auto 20px auto;
-  padding: 0 0 0 40px;
-  /*background-color:blue;*/ }
+  padding: 0 0 0 40px; }
 
 /*******Loss Calculator*******/
 #lossCal {
-  background-color: deepskyblue; }
+  background-color: #00bfff; }
 
 #lossCalForm {
-  background-color: deepskyblue;
+  background-color: #00bfff;
   font-size: 1.5em;
   border: 0px;
   text-align: center;
@@ -162,10 +166,10 @@ fieldset {
 
 /*******Development Calculator*******/
 #devCal {
-  background-color: coral; }
+  background-color: #ff7f50; }
 
 #devCalForm {
-  background-color: coral;
+  background-color: #ff7f50;
   font-size: 1.5em;
   border: 0px;
   text-align: center;

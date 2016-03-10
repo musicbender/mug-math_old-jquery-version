@@ -1,0 +1,44 @@
+.popover-div {
+    position: absolute;
+    top: 78%;
+    left: calc(95% - 30px);
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 0.5em;
+    color: #7f7f7f;
+    background-color: #b8b8b8;
+    cursor: pointer;
+    text-decoration: none;
+    opacity: 1;
+}
+
+.popover-div:focus {
+    text-decoration: none;
+}
+
+.popover {
+    position: relative;
+    border-radius: 0;
+}
+
+.fade.in {
+    opacity: 1;
+}
+
+.popover-content {
+    background-color: #fff;
+    color: #000;
+/*    border: 2px solid black;*/
+    border-radius: 0;
+    padding: 15px;
+    opacity: 1;
+    font-size: 20px;
+}
+
+.popover-div:hover {
+    background-color: #c7c7c7;
+    text-decoration: none;
+}
