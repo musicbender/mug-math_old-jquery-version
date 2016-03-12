@@ -9,9 +9,9 @@
         <meta name="description" content="A collection of custom calculators to help coffee professionals, home-baristas, and general coffee geeks brew or roast their favorite beverage.">
         <meta name="author" content="Pat Jacobs">
 
-        <link rel="shortcut icon" href="build/images/mugmath-favicon.png" defer>
-        <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,800' rel='stylesheet' type='text/css'>
+        <link rel="shortcut icon" href="build/images/mugmath-favicon.png" />
+        <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css' />
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,800' rel='stylesheet' type='text/css' />
 
         <link rel="stylesheet" type="text/css" href="build/build.css" />
         <script src="build/vendor/custom-modernizr.js"></script>
@@ -20,7 +20,7 @@
         <!--Title Section-->
        <section class="title">
            <h1 class="title-header">Mug<span class="math">Math</span></h1>
-           <img class="logo" src="build/images/mugmath_logo.png" />
+           <img class="logo" src="build/images/mugmath_logo.png" alt="For Good Coffee"/>
            <h3 class="sub-title">A nerd-made set of nerdy calculators for coffee nerds.</h3>
        </section>
 
@@ -32,7 +32,7 @@
                 <div class="col-md-6 cal" id="brewCal">
                     <form class="form-control calform" id="brewCalForm">
                         <!--coffee amount-->
-                        <label class="col-xs-12 control-label" for="formGroupInputLarge">Coffee Amount</label>
+                        <label class="col-xs-12 control-label" >Coffee Amount</label>
                         <br>
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 col-sm-offset-3 inner-brew-form">
@@ -53,7 +53,7 @@
                         </div>
                         <br>
                         <!--water amount-->
-                        <label class="col-xs-12 control-label" for="formGroupInputLarge">Water Amount</label>
+                        <label class="col-xs-12 control-label">Water Amount</label>
                         <br>
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 col-sm-offset-3 inner-brew-form">
@@ -88,31 +88,31 @@
             <div class="row">
                 <!--cal side-->
                 <div class="col-md-6 cal" id="extCal">
-                    <form class="form-control extform" id="extCalForm">
+                    <form class="form-control" id="extCalForm">
                         <div class="row">
                             <!--tds-->
                             <div class="col-sm-12" id="tds">
                                 <div class="row">
-                                    <label class="col-xs-12 control-label" for="formGroupInputLarge">TDS %</label>
+                                    <label class="col-xs-12 control-label">TDS %</label>
                                 </div>
-                                <div class="row" id="extform">
+                                <div class="row extform">
                                     <div class="col-xs-5 col-xs-offset-3">
                                         <input type="number" class="form-control ext-form" placeholder="min" name="tdsPercent" id="tdsPercent" min="0" max="99" step="any">
                                     </div>
                                 </div>
                             </div>
                             <!--coffee mass-->
-                            <div class="col-sm-12" id="coffee Mass">
+                            <div class="col-sm-12" id="coffeeMass">
                                 <div class="row">
-                                    <label class="col-xs-6 control-label" for="formGroupInputLarge">Dry Coffee Mass</label>
+                                    <label class="col-xs-6 control-label">Dry Coffee Mass</label>
                                     <!--<div class="col-xs-1">
                                         <p> </p>
                                     </div>-->
-                                    <label class="col-xs-6 control-label" for="formGroupInputLarge">Brewed Coffee Mass</label>
+                                    <label class="col-xs-6 control-label">Brewed Coffee Mass</label>
                                 </div>
 
                                 </div>
-                                <div class="row" id="extform">
+                                <div class="row extform">
                                     <div class="col-xs-5">
                                         <input type="number" class="form-control ext-form" placeholder="grams" name="dryMass" id="dryMass" min="0" max="999" step="any">
                                     </div>
@@ -144,7 +144,7 @@
                 <!--cal side-->
                 <div class="col-md-6 cal" id="lossCal">
                     <form class="form-control calform" id="lossCalForm">
-                        <label class="col-xs-12 control-label" for="formGroupInputLarge">Pre-Weight</label>
+                        <label class="col-xs-12 control-label" >Pre-Weight</label>
                         <br>
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 col-sm-offset-3 inner-loss-form">
@@ -162,7 +162,7 @@
                             </div>
                         </div>
                         <br>
-                        <label class="col-xs-12 control-label" for="formGroupInputLarge">Post-Weight</label>
+                        <label class="col-xs-12 control-label" >Post-Weight</label>
                         <br>
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 col-sm-offset-3 inner-loss-form">
@@ -175,7 +175,7 @@
                                             <li><a href="#">lbs.</a></li>
                                         </ul>
                                     </div>
-                                    <input class="form-control loss-form" id= "postWeight" type="number" name="postWeight" id="postWeight" min="0" max="9999" step="any">
+                                    <input class="form-control loss-form" id= "postWeight" type="number" name="postWeight" min="0" max="9999" step="any">
                                 </div>
                             </div>
                         </div>
@@ -203,9 +203,9 @@
                             <!--devtime-->
                             <div class="col-sm-12" id="devTime">
                                 <div class="row">
-                                    <label class="col-xs-12 control-label" for="formGroupInputLarge">First Crack Start</label>
+                                    <label class="col-xs-12 control-label">First Crack Start</label>
                                 </div>
-                                <div class="row" id="timeform">
+                                <div class="row timeform">
                                     <div class="col-xs-5">
                                         <input type="number" class="form-control dev-form" placeholder="min" name="devMin" id="devMin" min="0" max="59" step="any">
                                     </div>
@@ -220,9 +220,9 @@
                             <!--totaltime-->
                             <div class="col-sm-12" id="totalTime">
                                 <div class="row">
-                                    <label class="col-xs-12 control-label" for="formGroupInputLarge">Total Roast Time</label>
+                                    <label class="col-xs-12 control-label">Total Roast Time</label>
                                 </div>
-                                <div class="row" id="timeform">
+                                <div class="row timeform">
                                     <div class="col-xs-5">
                                         <input type="number" class="form-control dev-form" placeholder="min" name="totalMin" id="totalMin" min="0" max="59" step="any">
                                     </div>

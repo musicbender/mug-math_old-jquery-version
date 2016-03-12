@@ -44,7 +44,7 @@ a:focus {
 }
 
 .title-header {
-    font-family: 'Open Sans', sans-serif;
+    font-family: $fontOne;
     font-size: 6em;
     font-weight: 300;
     text-transform: uppercase;
@@ -107,13 +107,8 @@ fieldset {
 }
 
 #brewCalForm {
+    @extend %calForm;
     background-color: $teal;
-    font-size:1.5em;
-    border: 0px;
-    text-align: center;
-    height: 275px;
-    padding: 20px 0px 10px 0px;
-    margin: 0;
 }
 
 /*******Extraction Yeild Calculator*******/
@@ -122,16 +117,11 @@ fieldset {
 }
 
 #extCalForm {
+    @extend %calForm;
     background-color: $plum;
-    font-size:1.5em;
-    border: 0px;
-    text-align: center;
-    height: 275px;
-    padding: 20px 0px 10px 0px;
-    margin: 0;
 }
 
-#extform {
+.extform {
     margin: 0 auto 20px auto;
     padding: 0 0 0 40px;
 }
@@ -142,13 +132,8 @@ fieldset {
 }
 
 #lossCalForm {
+    @extend %calForm;
     background-color: $blue;
-    font-size:1.5em;
-    border: 0px;
-    text-align: center;
-    height: 275px;
-    padding: 20px 0px 10px 0px;
-    margin: 0;
 }
 
 /*******Development Calculator*******/
@@ -157,13 +142,8 @@ fieldset {
 }
 
 #devCalForm {
+    @extend %calForm;
     background-color: $orange;
-    font-size:1.5em;
-    border: 0px;
-    text-align: center;
-    height: 275px;
-    padding: 20px 0px 10px 0px;
-    margin: 0;
 }
 
 #colontime {
@@ -171,7 +151,7 @@ fieldset {
     margin: 0;
 }
 
-#timeform {
+.timeform {
     margin: 0 auto 20px auto;
     padding: 0 0 0 30px;
 }

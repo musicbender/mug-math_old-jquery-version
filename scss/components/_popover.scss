@@ -8,8 +8,8 @@
     vertical-align: middle;
     text-align: center;
     font-size: 0.5em;
-    color: #7f7f7f;
-    background-color: #b8b8b8;
+    color: $grey;
+    background-color: $toolGrey;
     cursor: pointer;
     text-decoration: none;
     opacity: 1;
@@ -31,7 +31,6 @@
 .popover-content {
     background-color: #fff;
     color: #000;
-/*    border: 2px solid black;*/
     border-radius: 0;
     padding: 15px;
     opacity: 1;
@@ -39,6 +38,6 @@
 }
 
 .popover-div:hover {
-    background-color: #c7c7c7;
+    background-color: $lightGrey;
     text-decoration: none;
 }
