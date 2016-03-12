@@ -1,44 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
     <head>
         <title>MugMath</title>
-        
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name=”robots” content=”noodp”>
         <meta name="description" content="A collection of custom calculators to help coffee professionals, home-baristas, and general coffee geeks brew or roast their favorite beverage.">
         <meta name="author" content="Pat Jacobs">
-        
-        <link rel="shortcut icon" href="images/mugmath-favicon.png" defer>
-        <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,800' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" type="text/css" href="css/normalize.css">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-        
-        <script src="js/jquery-2.1.4.min.js" defer></script>
-        <script src="js/bootstrap.min.js" defer></script>
-        <script src="js/form.js" type="text/javascript" defer></script>
-        
-        <!--Google Analytics-->
-        <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-            ga('create', 'UA-72988333-2', 'auto');
-            ga('send', 'pageview');
-        </script>
+        <link rel="shortcut icon" href="build/images/mugmath-favicon.png" />
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,800' rel='stylesheet' type='text/css' />
+        <link rel="stylesheet" type="text/css" href="build/build.css" />
+        <script src="build/vendor/custom-modernizr.js"></script>
     </head>
     <body>
         <!--Title Section-->
        <section class="title">
            <h1 class="title-header">Mug<span class="math">Math</span></h1>
-           <img class="logo" src="images/mugmath_logo.png" />
+           <img class="logo" src="build/images/mugmath_logo.png" alt="For Good Coffee"/>
            <h3 class="sub-title">A nerd-made set of nerdy calculators for coffee nerds.</h3>
        </section>
-       
+
         <!--Ratio Calculator-->
         <h2>Brew Ratio Calculator</h2>
         <div class="container">
@@ -47,7 +28,7 @@
                 <div class="col-md-6 cal" id="brewCal">
                     <form class="form-control calform" id="brewCalForm">
                         <!--coffee amount-->
-                        <label class="col-xs-12 control-label" for="formGroupInputLarge">Coffee Amount</label>
+                        <label class="col-xs-12 control-label" >Coffee Amount</label>
                         <br>
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 col-sm-offset-3 inner-brew-form">
@@ -60,15 +41,15 @@
                                             <li><a href="#">ounces</a></li>
                                             <li><a href="#">tbsp.</a></li>
                                         </ul>
-                                    </div><!-- /btn-group -->
-                                    <!--input-->    
+                                    </div>
+                                    <!--input-->
                                     <input class="form-control brew-form" id="coffeeDose" type="number" name="coffeeDose" min="0" max="9999" step="any">
                                 </div><!--input-group-->
                             </div>
                         </div>
                         <br>
                         <!--water amount-->
-                        <label class="col-xs-12 control-label" for="formGroupInputLarge">Water Amount</label>
+                        <label class="col-xs-12 control-label">Water Amount</label>
                         <br>
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 col-sm-offset-3 inner-brew-form">
@@ -91,41 +72,40 @@
                 <!--answer side-->
                 <div class="col-md-6 answerbox">
                     <p class="answerBrew"></p>
+                    <!--popover-->
+                    <a tabindex="0" role="button" class="popover-div" data-toggle="popover" data-trigger="focus" data-placement="top" data-content="The 'golden brew ratio' is a 1:16 ratio (1 part coffee to 16 parts water) for certain brew methods. Certainly, this can be a starting point and adjusted to taste.">?</a>
                 </div>
             </div>
         </div>
-        
+
         <!--Extraction Yield Calculator-->
         <h2>Extraction Yield Calculator</h2>
         <div class="container">
             <div class="row">
                 <!--cal side-->
                 <div class="col-md-6 cal" id="extCal">
-                    <form class="form-control extform" id="extCalForm">
+                    <form class="form-control" id="extCalForm">
                         <div class="row">
                             <!--tds-->
                             <div class="col-sm-12" id="tds">
                                 <div class="row">
-                                    <label class="col-xs-12 control-label" for="formGroupInputLarge">TDS %</label>
+                                    <label class="col-xs-12 control-label">TDS %</label>
                                 </div>
-                                <div class="row" id="extform">
+                                <div class="row extform">
                                     <div class="col-xs-5 col-xs-offset-3">
                                         <input type="number" class="form-control ext-form" placeholder="min" name="tdsPercent" id="tdsPercent" min="0" max="99" step="any">
                                     </div>
                                 </div>
-                            </div>      
+                            </div>
                             <!--coffee mass-->
-                            <div class="col-sm-12" id="coffee Mass">
+                            <div class="col-sm-12" id="coffeeMass">
                                 <div class="row">
-                                    <label class="col-xs-6 control-label" for="formGroupInputLarge">Dry Coffee Mass</label>
-                                    <!--<div class="col-xs-1">
-                                        <p> </p>
-                                    </div>-->
-                                    <label class="col-xs-6 control-label" for="formGroupInputLarge">Brewed Coffee Mass</label>
+                                    <label class="col-xs-6 control-label">Dry Coffee Mass</label>
+                                    <label class="col-xs-6 control-label">Brewed Coffee Mass</label>
                                 </div>
-                                
+
                                 </div>
-                                <div class="row" id="extform">
+                                <div class="row extform">
                                     <div class="col-xs-5">
                                         <input type="number" class="form-control ext-form" placeholder="grams" name="dryMass" id="dryMass" min="0" max="999" step="any">
                                     </div>
@@ -134,8 +114,8 @@
                                     </div>
                                     <div class="col-xs-5">
                                         <input type="number" class="form-control ext-form" placeholder="grams" name="brewMass" id="brewMass" min="0" max="999" step="any">
-                                    </div>    
-                                </div>   
+                                    </div>
+                                </div>
                             </div>
                         <button type="submit" class="btn btn-default" id="submitExtCal" disabled>Calculate</button>
                     </form>
@@ -143,19 +123,20 @@
                 <!--answer side-->
                 <div class="col-md-6 answerbox">
                     <p class="answerExt"></p>
+                    <!--popover-->
+                    <a tabindex="0" role="button" class="popover-div" data-toggle="popover" data-trigger="focus" data-placement="top" data-content="Extraction is how much of the coffee that was picked up by the water. Generaly, you want an extraction of 18-22%. In order to get the TDS (Total Disolved Solids), you'll need a refractometer.">?</a>
                 </div>
             </div>
         </div>
-        
+
         <!--Moisture Loss Calculator-->
         <h2>Moisture Loss Calculator</h2>
         <div class="container">
             <div class="row">
-                
                 <!--cal side-->
                 <div class="col-md-6 cal" id="lossCal">
                     <form class="form-control calform" id="lossCalForm">
-                        <label class="col-xs-12 control-label" for="formGroupInputLarge">Pre-Weight</label>
+                        <label class="col-xs-12 control-label" >Pre-Weight</label>
                         <br>
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 col-sm-offset-3 inner-loss-form">
@@ -173,7 +154,7 @@
                             </div>
                         </div>
                         <br>
-                        <label class="col-xs-12 control-label" for="formGroupInputLarge">Post-Weight</label>
+                        <label class="col-xs-12 control-label" >Post-Weight</label>
                         <br>
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 col-sm-offset-3 inner-loss-form">
@@ -185,8 +166,8 @@
                                             <li><a href="#">ounces</a></li>
                                             <li><a href="#">lbs.</a></li>
                                         </ul>
-                                    </div><!-- /btn-group -->
-                                    <input class="form-control loss-form" id= "postWeight" type="number" name="postWeight" id="postWeight" min="0" max="9999" step="any">
+                                    </div>
+                                    <input class="form-control loss-form" id= "postWeight" type="number" name="postWeight" min="0" max="9999" step="any">
                                 </div>
                             </div>
                         </div>
@@ -197,10 +178,12 @@
                 <!--answer side-->
                 <div class="col-md-6 answerbox">
                     <p class="answerLoss"></p>
+                    <!--popover-->
+                    <a tabindex="0" role="button" class="popover-div" data-toggle="popover" data-trigger="focus" data-placement="top" data-content="When roasting coffee, the coffee bean loses weight because of water loss. This can sometimes be an indicator of how much it has been roasted.">?</a>
                 </div>
             </div>
         </div>
-        
+
         <!--Dev Calculator-->
         <h2>Roast Development Calculator</h2>
         <div class="container">
@@ -208,13 +191,13 @@
                 <!--cal side-->
                 <div class="col-md-6 cal" id="devCal">
                     <form class="form-control calform" id="devCalForm">
-                        <div class="row"> 
+                        <div class="row">
                             <!--devtime-->
                             <div class="col-sm-12" id="devTime">
                                 <div class="row">
-                                    <label class="col-xs-12 control-label" for="formGroupInputLarge">First Crack Start</label>
+                                    <label class="col-xs-12 control-label">First Crack Start</label>
                                 </div>
-                                <div class="row" id="timeform">
+                                <div class="row timeform">
                                     <div class="col-xs-5">
                                         <input type="number" class="form-control dev-form" placeholder="min" name="devMin" id="devMin" min="0" max="59" step="any">
                                     </div>
@@ -223,15 +206,15 @@
                                     </div>
                                     <div class="col-xs-5">
                                         <input type="number" class="form-control dev-form" placeholder="sec" name="devSec" id="devSec" min="0" max="59" step="any">
-                                    </div>    
+                                    </div>
                                 </div>
                             </div>
                             <!--totaltime-->
                             <div class="col-sm-12" id="totalTime">
                                 <div class="row">
-                                    <label class="col-xs-12 control-label" for="formGroupInputLarge">Total Roast Time</label>
+                                    <label class="col-xs-12 control-label">Total Roast Time</label>
                                 </div>
-                                <div class="row" id="timeform">
+                                <div class="row timeform">
                                     <div class="col-xs-5">
                                         <input type="number" class="form-control dev-form" placeholder="min" name="totalMin" id="totalMin" min="0" max="59" step="any">
                                     </div>
@@ -240,8 +223,8 @@
                                     </div>
                                     <div class="col-xs-5">
                                         <input type="number" class="form-control dev-form" placeholder="sec" name="totalSec" id="totalSec" min="0" max="59" step="any">
-                                    </div>    
-                                </div>   
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="row">
@@ -254,12 +237,31 @@
                 <!--answer side-->
                 <div class="col-md-6 answerbox">
                     <p class="answerDev"></p>
+                    <!--popover-->
+                    <a tabindex="0" role="button" class="popover-div" data-toggle="popover" data-trigger="focus" data-placement="top" data-content="Roast Development is generally considered to start at first crack and ends when the roast is finished. This can help determine if your roast was under-developed or over-developed.">?</a>
                 </div>
             </div>
         </div>
-        
+
+        <!--Google Analytics-->
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-72988333-2', 'auto');
+            ga('send', 'pageview');
+        </script>
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script>window.jQuery || document.write('<script src="build/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+        <script>
+            $(function () {
+                $('[data-toggle="popover"]').popover()
+            })
+        </script>
+        <script src="build/build.js"></script>
     </body>
-            
 <!--            Division graphic by <a href="http://graphicsbay.com">Graphicsbay</a> and Circle graphic by <a href="http://www.danielbruce.se">Daniel Bruce</a> and Bar Icons graphic by <a href="http://www.sm-artists.com">Spovv</a> from <a href="http://www.flaticon.com/">Flaticon</a> are licensed under <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a>. Made with <a href="http://logomakr.com" title="Logo Maker">Logo Maker</a>-->
 
 </html>

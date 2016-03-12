@@ -1,0 +1,161 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+/*******Imports*******/
+@import 'helpers/_variables.scss';
+@import 'helpers/_functions.scss';
+@import 'helpers/_mixins.scss';
+@import 'helpers/_placeholders.scss';
+
+/*******General*******/
+body {
+    margin: 0;
+     background-color: whitesmoke;
+}
+
+.container {
+    margin: 5px auto 100px auto;
+    text-align: center;
+    @extend %shadowed;
+}
+
+h2 {
+    margin: 0 auto;
+    padding: 5px 0 5px 0;
+    text-align: center;
+    font-size:2em;
+    border: 2px solid black;
+    max-width:500px;
+}
+
+a:focus {
+    outline: none;
+}
+
+/*******Title Section*******/
+.title {
+    margin: -20px auto 80px auto;
+    width: 100%;
+    padding: 40px 0 40px 0;
+    text-align: center;
+    background-color: $lightGrey;
+}
+
+.title-header {
+    font-family: $fontOne;
+    font-size: 6em;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.math {
+    font-weight: 800;
+}
+
+.logo {
+    width: 60px;
+}
+
+.sub-title {
+    width: 100%;
+    margin: 15px auto;
+    color: $grey;
+    font-size: 2em;
+}
+
+/*******All Calculators*******/
+.cal {
+    margin: 0 auto 0 auto;
+    border:0px solid transparent;
+}
+
+.answerbox {
+    position: relative;
+    margin: 0 auto 0 auto;
+    padding-top: 95px;
+    height: 275px;
+    border: 0px;
+    text-align: center;
+    font-size:3.5em;
+    color: $smokeWhite;
+    background-color: $darkGrey;
+}
+
+.answerbox p {
+    margin: 0 auto 0 auto;
+}
+
+fieldset {
+    border:0px;
+}
+
+.inner-form {
+    margin: 0 auto 0 auto;
+    font-size: 1.1em;
+}
+
+/*******Popover*******/
+
+@import 'components/_popover.scss';
+
+/*******Brew Calculator*******/
+
+#brewCal {
+    background-color: $teal;
+}
+
+#brewCalForm {
+    @extend %calForm;
+    background-color: $teal;
+}
+
+/*******Extraction Yeild Calculator*******/
+#extCal {
+    background-color: $plum;
+}
+
+#extCalForm {
+    @extend %calForm;
+    background-color: $plum;
+}
+
+.extform {
+    margin: 0 auto 20px auto;
+    padding: 0 0 0 40px;
+}
+
+/*******Loss Calculator*******/
+#lossCal {
+    background-color: $blue;
+}
+
+#lossCalForm {
+    @extend %calForm;
+    background-color: $blue;
+}
+
+/*******Development Calculator*******/
+#devCal {
+    background-color: $orange;
+}
+
+#devCalForm {
+    @extend %calForm;
+    background-color: $orange;
+}
+
+#colontime {
+    padding: 0;
+    margin: 0;
+}
+
+.timeform {
+    margin: 0 auto 20px auto;
+    padding: 0 0 0 30px;
+}
+
+/*******Media Queries*******/
+
+@import 'media/_media-queries.scss';
