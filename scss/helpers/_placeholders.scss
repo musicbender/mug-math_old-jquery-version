@@ -1,0 +1,14 @@
+%shadowed {
+    -webkit-box-shadow: 4px 4px 8px 0px rgba(0,0,0,0.58);
+    -moz-box-shadow:    4px 4px 8px 0px rgba(0,0,0,0.58);
+    box-shadow:         4px 4px 8px 0px rgba(0,0,0,0.58);
+}
+
+%calForm {
+    font-size:1.5em;
+    border: 0px;
+    text-align: center;
+    height: 275px;
+    padding: 20px 0px 10px 0px;
+    margin: 0;
+}
